@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VN CODE 01 – Premium VN Templates</title>
+<style>
+:root{--teal:#1b806e;--orange:#f97316;--red:#ef4444;--bg:#faf9f8;--ink:#0f172a;--mute:#64748b}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+body{background:var(--bg);color:var(--ink);padding-bottom:20px}
+.hidden{display:none!important}
+button{cursor:pointer;border:none;background:none;font-size:inherit}
+
+header{position:sticky;top:0;z-index:20;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #eee}
+.logo{font-weight:900;font-size:34px;line-height:.9;letter-spacing:-2px}
+.logo small{display:block;font-size:12px;font-weight:700;letter-spacing:0}
+.actions{display:flex;align-items:center;gap:6px}
+.pill{background:linear-gradient(90deg,#f97316,#ef4444);color:#fff;font-weight:bold;padding:8px 14px;border-radius:20px;font-size:14px}
+.icon{font-size:20px;padding:8px;position:relative}
+.badge{position:absolute;top:-2px;right:-2px;background:var(--red);color:#fff;font-size:11px;border-radius:50%;min-width:18px;height:18px;display:flex;align-items:center;justify-content:center}
+
+.search{position:fixed;top:60px;left:0;right:0;bottom:0;z-index:19;background:var(--teal);padding:16px}
+.search input{width:100%;padding:16px;border-radius:12px;border:none;font-size:16px}
+.results{background:#fff;border-radius:12px;margin-top:14px;padding:14px;min-height:200px;color:var(--mute);text-align:center}
+.results .row{display:flex;justify-content:space-between;padding:12px 4px;border-bottom:1px solid #eee;color:var(--ink);text-align:left}
+
+.promo{background:linear-gradient(90deg,#f59e0b,#f97316);color:#fff;font-weight:bold;padding:14px;text-align:center;font-size:14px}
+.promo b{background:rgba(255,255,255,.25);padding:6px 10px;border-radius:20px;margin-left:6px;cursor:pointer}
+
+h2{text-align:center;font-size:26px;margin:26px 0 16px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:0 12px}
+.chip{border:2px solid var(--teal);color:var(--teal);padding:10px 20px;border-radius:30px;font-weight:600;font-size:15px;background:#fff}
+.chip.active{background:var(--teal);color:#fff}
+.trend{background:#f3f1ee;padding:0 10px 20px;margin-top:22px}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.08)}
+.thumb{position:relative;aspect-ratio:9/16;display:flex;align-items:center;justify-content:center;font-size:54px;color:#fff;overflow:hidden}
+.thumb video{width:100%;height:100%;object-fit:contain;background:#000}
+.play{position:absolute;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.9);color:#000;font-size:26px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.heart{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:18px}
+.heart.on{color:#ff4d6d}
+.info{padding:12px}
+.name{font-weight:bold;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.price{margin:6px 0 10px;font-size:22px;font-weight:bold}
+.price s{font-size:14px;color:var(--mute);font-weight:normal;margin-left:6px}
+.add{width:100%;padding:12px;border-radius:10px;background:var(--teal);color:#fff;font-weight:600;font-size:15px}
+.add.in{background:#fff;color:var(--teal);border:2px solid var(--teal)}
+
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:30}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:80%;max-width:360px;background:var(--bg);z-index:31;padding:16px;display:flex;flex-direction:column}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.bundle-big{background:linear-gradient(90deg,#f97316,#ef4444);color:#fff;font-weight:bold;font-size:18px;padding:18px;border-radius:14px}
+.bundle-big span{background:rgba(255,255,255,.25);font-size:12px;padding:5px 9px;border-radius:14px;margin-left:6px}
+.drawer ul{list-style:none;background:#fff;border-radius:14px;margin-top:16px;padding:6px 14px}
+.drawer li{padding:15px 0;font-size:17px;display:flex;justify-content:space-between;cursor:pointer}
+.badge2{background:var(--teal);color:#fff;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:13px}
+.drawer-foot{margin-top:auto;display:grid;gap:10px}
+.btn-outline,.btn-solid{padding:15px;border-radius:12px;font-size:17px;font-weight:600}
+.btn-outline{border:1px solid #ccc;background:#fff}
+.btn-solid{background:var(--teal);color:#fff}
+
+.cartpage{position:fixed;inset:0;background:var(--bg);z-index:40;overflow-y:auto;padding:16px 14px 110px}
+.back{color:var(--mute);font-size:17px;margin:6px 0 16px}
+.cart-title{display:flex;justify-content:space-between;align-items:baseline}
+.cart-title h2{margin:0;font-size:28px}
+.cart-title span{color:var(--mute)}
+.offer{background:#fff;border:1px solid #eee;border-radius:16px;padding:18px;margin:18px 0;font-weight:bold;font-size:18px}
+.offer em{color:var(--orange);font-style:normal}
+.bar{height:8px;border-radius:6px;background:#fde8d0;margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--orange);transition:.3s}
+.item{background:#fff;border:1px solid #eee;border-radius:16px;padding:14px;margin-bottom:12px;display:flex;gap:12px;align-items:center}
+.mini{width:70px;height:70px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+.item .mid{flex:1;min-width:0}
+.item .mid b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:17px}
+.item .mid span{color:var(--mute)}
+.item .right{text-align:right}
+.item .right s{color:var(--mute);display:block;font-size:14px}
+.item .right b{font-size:20px}
+.item .right .ok{display:block;color:#16a34a;font-size:14px}
+.item .del{font-size:18px;padding:6px}
+.clear{color:var(--mute);font-size:16px;margin:6px 0 16px}
+.coupon{background:#fff;border:1px solid #eee;border-radius:16px;padding:16px}
+.coupon-row{display:flex;gap:8px;margin-top:12px}
+.coupon input{flex:1;padding:14px;border-radius:10px;border:2px solid #ddd;font-size:16px;text-transform:uppercase}
+.coupon-row button{background:var(--teal);color:#fff;padding:0 18px;border-radius:10px;font-weight:bold}
+#couponMsg{margin-top:10px;font-size:15px}
+.paybar{position:fixed;left:0;right:0;bottom:0;background:#fff;padding:12px 14px;display:flex;align-items:center;gap:14px;box-shadow:0 -2px 10px rgba(0,0,0,.1)}
+.paybar small{color:var(--mute)}
+.total{font-size:26px;font-weight:bold}
+.pay{flex:1;padding:18px;border-radius:14px;color:#fff;font-weight:bold;font-size:17px;background:linear-gradient(90deg,#f97316,#ef4444)}
+
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:12px 20px;border-radius:24px;z-index:60;font-size:14px}
+
+.authwrap{position:fixed;inset:0;background:var(--bg);z-index:70;overflow-y:auto}
+.authtop{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#fff;border-bottom:1px solid #eee}
+.authtop .back{margin:0;font-size:16px;width:60px;text-align:left}
+.authbox{padding:36px 22px 40px;max-width:460px;margin:0 auto}
+.authbox h1{font-size:32px;margin-bottom:10px}
+.authsub{color:var(--mute);font-size:17px;line-height:1.5;margin-bottom:20px}
+.autherr{border-radius:10px;padding:14px 16px;margin-bottom:14px;font-size:16px;background:#fdeeee;border:1px solid #f5c2c2;color:#b91c1c}
+.autherr:empty{display:none}
+.autherr.ok{background:#ecfdf3;border-color:#a7f3c0;color:#166534}
+.gbtn{width:100%;padding:15px;border:1px solid #d6d6d6;border-radius:12px;background:#fff;font-size:17px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px}
+.or{display:flex;align-items:center;gap:12px;margin:22px 0;color:var(--mute);font-size:16px}
+.or:before,.or:after{content:"";flex:1;height:1px;background:#d9d9d9}
+.authbox label{display:block;font-weight:600;font-size:17px;margin-bottom:8px}
+.authbox label b{color:#ef4444}
+.authbox input{width:100%;padding:16px;margin-bottom:18px;border:1px solid #d6d6d6;border-radius:12px;font-size:17px;background:#fff}
+.authbox input:focus{outline:none;border-color:var(--teal)}
+.pwrow{position:relative}
+.pwrow input{padding-right:52px}
+.eye{position:absolute;right:6px;top:4px;font-size:22px;padding:10px;opacity:.6}
+.forgot{text-align:right;margin:-6px 0 18px}
+.forgot a{color:#2563eb;font-size:17px;cursor:pointer}
+.authgo{width:100%;padding:17px;border-radius:14px;background:var(--teal);color:#fff;font-weight:bold;font-size:20px;box-shadow:0 4px 12px rgba(27,128,110,.3)}
+.authgo:disabled{opacity:.6}
+.authsw{text-align:center;margin-top:20px;color:#475569;font-size:17px}
+.authsw a{color:#2563eb;cursor:pointer;font-weight:600}
+
+.avwrap{position:relative;display:flex;align-items:center}
+.avatar{width:42px;height:42px;border-radius:50%;background:var(--teal);color:#fff;font-weight:bold;font-size:20px;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.umenu{position:absolute;right:-6px;top:54px;width:210px;background:#fff;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.18);border:1px solid #eee;z-index:35;overflow:hidden}
+.umenu button{display:block;width:100%;text-align:left;padding:16px 20px;font-size:17px;border-bottom:1px solid #f0f0f0;color:#334155}
+.umenu button:last-child{border-bottom:none}
+.acctpage{position:fixed;inset:0;background:var(--bg);z-index:45;overflow-y:auto}
+.acctwrap{max-width:560px;margin:0 auto;padding:20px 16px 50px}
+.acctwrap h1{font-size:34px;margin:10px 0 20px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:#eef2f7;border-radius:14px;padding:6px;margin-bottom:22px}
+.tabs button{padding:14px 6px;border-radius:10px;font-size:17px;color:#64748b;font-weight:600}
+.tabs button.on{background:#fff;color:#0f172a;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.pcard{background:#fff;border-radius:16px;padding:22px 18px;border:1px solid #f0f0f0}
+.pcard h2{margin:0 0 14px;font-size:26px}
+.editbtn{display:block;margin:0 auto 22px;padding:11px 26px;border:2px solid var(--teal);border-radius:12px;color:var(--teal);font-weight:600;font-size:17px}
+.pid{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.pav{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,#fb923c,#fbbf24);color:#fff;font-size:38px;font-weight:bold;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pid b{font-size:24px;display:block}
+.pid span{color:var(--mute);font-size:15px}
+.pcard label{display:block;font-weight:600;font-size:16px;margin:16px 0 8px}
+.pcard label i{color:#ef4444;font-style:normal}
+.fbox,.pcard input{width:100%;padding:15px;border-radius:12px;background:#eef2f7;border:2px solid transparent;font-size:17px;min-height:54px}
+.pcard input:focus{outline:none;border-color:var(--teal);background:#fff}
+.pcard small{display:block;color:var(--mute);margin-top:6px;font-size:14px}
+.prow{display:flex;gap:10px;margin-top:22px}
+.prow button{flex:1;padding:15px;border-radius:12px;font-weight:bold;font-size:17px}
+.prow .sv{background:var(--teal);color:#fff}
+.prow .cn{background:#eef2f7;color:#334155}
+.ohead{background:var(--teal);color:#fff;text-align:center;padding:34px 10px;border-radius:16px 16px 0 0;font:italic bold 32px Georgia,serif}
+.olist{background:#fff;border:1px solid #eee;border-radius:0 0 16px 16px}
+.order{padding:24px 20px;border-bottom:1px solid #eee}
+.order:last-child{border-bottom:none}
+.order b{font-size:20px;display:block}
+.order .dt{color:var(--mute);font-size:16px;margin:6px 0 14px}
+.order .st{font-size:19px;font-weight:600;margin-bottom:10px}
+.st.Failed{color:#f59e0b}.st.Paid,.st.Completed{color:#16a34a}.st.Pending{color:#2563eb}
+.order .am{font-size:26px;font-weight:bold;margin-bottom:12px}
+.order .vd{color:var(--teal);font-size:18px;font-weight:600}
+.odet{margin-top:12px;color:#475569;font-size:16px;line-height:1.7}
+.empty{padding:46px 20px;text-align:center;color:var(--mute);font-size:17px}
+.empty button{margin-top:16px;padding:13px 26px;background:var(--teal);color:#fff;border-radius:12px;font-weight:bold;font-size:17px}
+
+.name{cursor:pointer}
+.tplpage{position:fixed;inset:0;background:var(--bg);z-index:44;overflow-y:auto}
+.tplwrap{max-width:560px;margin:0 auto;padding:16px 16px 60px}
+.crumb{color:var(--mute);font-size:17px;margin:6px 0 20px;line-height:1.6}
+.crumb a{cursor:pointer}
+.crumb span{color:var(--ink)}
+.tplvid{width:min(100%,340px);margin:0 auto;aspect-ratio:9/16;border-radius:22px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;font-size:70px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.tplvid video{width:100%;height:100%;object-fit:contain;background:#000}
+.trow{display:flex;justify-content:space-between;align-items:center;margin:22px 0 14px}
+.tchip{background:#eef2f7;color:#475569;font-weight:600;padding:10px 18px;border-radius:20px;font-size:16px}
+.tact{display:flex;gap:18px}
+.tact button{font-size:18px;font-weight:600;color:#334155}
+.ttitle{font-size:34px;line-height:1.2;margin-bottom:14px}
+.tdesc{color:#64748b;font-size:19px;line-height:1.7}
+.tdesc.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rm{display:inline-block;color:var(--teal);font-size:19px;font-weight:600;margin:8px 0 18px;cursor:pointer}
+.ttags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.ttags span{border:1px solid #d9dee5;border-radius:20px;padding:10px 18px;font-size:16px;color:#475569;background:#fff}
+.tinc{font-size:26px;margin-bottom:12px}
+.irow{display:flex;align-items:center;gap:14px;padding:16px 0}
+.irow b{flex:1;font-size:21px;font-weight:600}
+.tick{width:34px;height:34px;border-radius:50%;background:#dff3ee;color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.ibtn{width:52px;height:52px;border-radius:50%;background:#eef2f7;font-size:24px;color:#475569}
+.inote{background:#f1f5f9;border-radius:12px;padding:12px 16px;color:#475569;font-size:16px;margin:-4px 0 8px}
+.tprice{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e5e7eb;margin-top:12px;padding-top:22px}
+.tprice div{font-size:46px;font-weight:800}
+.tprice s{font-size:26px;color:var(--mute);font-weight:600;margin-left:6px}
+.savepill{background:#fef3c7;border:1px solid #fcd34d;color:#92400e;font-weight:700;padding:10px 18px;border-radius:20px;font-size:18px}
+.add.big{margin-top:16px;padding:20px;font-size:22px;border-radius:14px}
+.tmore{text-align:left;font-size:28px;margin:34px 0 16px}
+
+.howpage{position:fixed;inset:0;background:var(--bg);z-index:44;overflow-y:auto}
+.howwrap{max-width:560px;margin:0 auto;padding:24px 18px 60px}
+.qgwrap{text-align:center;margin-bottom:22px}
+.qg{display:inline-block;background:#e3efec;color:var(--teal);font-weight:700;font-size:20px;padding:16px 38px;border-radius:30px}
+.howh{text-align:center;font-size:38px;line-height:1.25;margin-bottom:22px}
+.howsub{text-align:center;font-size:24px;line-height:1.6;margin-bottom:46px}
+.howsub b{color:var(--teal)}
+.hstep{display:grid;grid-template-columns:70px 1fr;gap:18px;margin-bottom:44px}
+.hleft{position:relative}
+.hstep:not(:last-of-type) .hleft:after{content:"";position:absolute;left:34px;top:84px;bottom:-40px;width:3px;background:#e1e6f3;border-radius:2px}
+.htile{width:68px;height:68px;border-radius:16px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.hnum{position:absolute;top:-10px;right:-10px;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid #e1e6f3;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center}
+.hright h3{font-size:30px;margin-bottom:10px;line-height:1.2}
+.hright p{font-size:21px;line-height:1.55;color:#334155;margin-bottom:18px}
+.hill{max-width:300px}
+.hph{width:100%;height:auto;display:block;filter:drop-shadow(0 10px 22px rgba(0,0,0,.14))}
+.hcta{text-align:center;margin-top:10px}
+.hcta p{font-size:20px;color:#475569;margin-bottom:6px}
+
+.hcta{background:#e8f0ee;border-radius:24px;padding:30px 20px;margin-top:6px}
+.hcta h2{font-size:30px;margin:0 0 10px;line-height:1.25}
+.hhelp{margin-top:18px;font-size:17px}
+.hhelp a{color:var(--teal);font-weight:600;cursor:pointer}
+
+.paywrap{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:80;display:flex;align-items:flex-end;justify-content:center}
+.paybox{background:#fff;width:100%;max-width:520px;border-radius:24px 24px 0 0;padding:26px 22px 30px}
+.testtag{display:inline-block;background:#fee2e2;color:#b91c1c;font-weight:800;font-size:13px;padding:6px 12px;border-radius:14px;letter-spacing:.5px}
+.paybox h3{font-size:26px;margin:12px 0 4px}
+.payamt{font-size:34px;font-weight:800;margin-bottom:8px}
+.paynote{color:var(--mute);font-size:15px;line-height:1.5;margin-bottom:18px}
+.failbtn{width:100%;padding:15px;border-radius:14px;border:2px solid #fca5a5;color:#b91c1c;font-weight:700;font-size:17px;margin-top:12px;background:#fff}
+.cnbtn{width:100%;padding:14px;color:var(--mute);font-size:17px;margin-top:6px}
+.paidpage{position:fixed;inset:0;background:var(--bg);z-index:46;overflow-y:auto}
+.paidwrap{max-width:560px;margin:0 auto;padding:36px 16px 60px;text-align:center}
+.okcircle{width:140px;height:140px;border-radius:50%;background:#d3eedd;margin:0 auto 34px;position:relative;display:flex;align-items:center;justify-content:center}
+.okin{width:68px;height:68px;border-radius:50%;border:5px solid #22c55e;color:#22c55e;font-size:38px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.spark{position:absolute;top:-8px;right:-14px;color:#f97316;font-size:34px}
+.okh{font-size:38px;margin-bottom:14px}
+.oksub{color:#64748b;font-size:22px;line-height:1.6;margin-bottom:34px}
+.rcard{background:#fff;border:1px solid #eee;border-radius:26px;padding:26px 22px;text-align:left;box-shadow:0 6px 24px rgba(0,0,0,.05);margin-bottom:22px}
+.rtop{display:flex;justify-content:space-between;gap:10px;padding-bottom:22px;border-bottom:1px solid #eee}
+.rtop small{display:block;color:#64748b;font-size:18px;margin-bottom:6px}
+.rtop b{font-size:21px}
+.rsum{padding:22px 0;border-bottom:1px solid #eee}
+.rsum h3{font-size:25px;margin-bottom:16px}
+.rrow{display:flex;justify-content:space-between;padding:12px 0;font-size:20px;color:#475569}
+.rrow.g{color:#16a34a}
+.rrow.tot{border-top:1px solid #eee;margin-top:8px;padding-top:18px;color:#0f172a;font-weight:800}
+.rqr{padding-top:22px;text-align:center}
+.rqr h3{font-size:25px;margin-bottom:18px}
+.qrbox{background:#fff;border-radius:22px;box-shadow:0 6px 22px rgba(0,0,0,.1);padding:14px;margin:0 auto 22px;max-width:320px}
+.qrbox img{width:100%;border-radius:14px;display:block}
+.qrn{font-weight:700;margin:12px 0 4px;font-size:17px}
+.qrbtn{display:inline-block;margin-top:10px;background:linear-gradient(90deg,#f97316,#ef4444);color:#fff;font-weight:700;padding:14px 24px;border-radius:12px;font-size:18px;text-decoration:none}
+.qrnote{color:#64748b;font-size:18px;line-height:1.6}
+.testnote{background:#fef2f2;color:#b91c1c;border-radius:12px;padding:12px 14px;font-size:15px;margin-bottom:18px}
+.hbtn{display:block;width:100%;padding:20px;border-radius:14px;font-size:21px;font-weight:700;margin-bottom:14px}
+.hbtn.out{border:2px solid var(--teal);color:var(--teal);background:#fff}
+.hbtn.solid{background:var(--teal);color:#fff}
+.oit{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px dashed #e5e7eb}
+.oit .dl{color:var(--teal);font-weight:700;white-space:nowrap}
+.tst{background:#fee2e2;color:#b91c1c;font-size:11px;padding:3px 8px;border-radius:10px;vertical-align:middle;margin-left:6px}
+.retry{margin-top:12px;background:var(--teal);color:#fff;padding:12px 22px;border-radius:12px;font-weight:700;font-size:16px}
+
+.vcover{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.thumb .heart{z-index:3}
+.vview{position:fixed;inset:0;background:#000;z-index:60}
+.vvbody{height:100%;display:flex;flex-direction:column}
+.vtop{display:flex;align-items:center;gap:14px;padding:12px 14px;color:#fff}
+.vtop span{font-size:18px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vx{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:20px;flex-shrink:0}
+.vstage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+.vstage video{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;background:#000}
+.vbar{display:flex;gap:8px;padding:12px 12px 18px;background:#0b0b0b;align-items:stretch}
+.vbar button{flex:1;color:#fff;font-size:15px;font-weight:600;padding:12px 4px;border-radius:12px;background:rgba(255,255,255,.12);white-space:nowrap}
+.vbar button.add{background:var(--teal);color:#fff;border:none}
+.vbar button.add.in{background:#fff;color:var(--teal)}
+
+.mailnote{color:#166534;font-size:16px;margin:0 0 16px;min-height:0}
+.mailnote:empty{display:none}
+
+.admpage{position:fixed;inset:0;background:var(--bg);z-index:44;overflow-y:auto}
+.admwrap{max-width:560px;margin:0 auto;padding:20px 16px 60px}
+.admwrap h1{font-size:32px;margin:6px 0 8px}
+.admsub{color:#475569;font-size:17px;line-height:1.6;margin-bottom:18px}
+.admh{font-size:24px;margin:28px 0 12px}
+.admres{text-align:center;margin-top:18px}
+.admres input{margin-top:14px;font-size:14px}
+.admqr{margin:14px auto 0;display:flex;justify-content:center}
+.admqr canvas{width:min(100%,300px);height:auto;border:1px solid #e5e7eb;border-radius:12px}
+.admlist{color:var(--mute)}
+.admrow{background:#fff;border:1px solid #eee;border-radius:14px;padding:14px;margin-bottom:10px}
+.admrow b{display:block;font-size:17px;color:var(--ink);margin-bottom:6px}
+.admrow span{font-size:14px;font-weight:700;padding:3px 10px;border-radius:10px}
+.admrow .free{background:#dcfce7;color:#166534}.admrow .used{background:#fee2e2;color:#991b1b}
+.admbtns{display:flex;gap:8px;margin-top:10px}
+.admbtns button{flex:1;padding:10px;border-radius:10px;background:#eef2f7;font-weight:600;font-size:15px}
+.admbtns .del{background:#fee2e2;color:#b91c1c}
+.vmsg{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;font-size:20px;padding:30px;line-height:1.6}
+.vmsg.bad{color:#fca5a5}
+.vstage iframe{width:100%;height:100%;border:0}
+.vlock{flex:1;text-align:center;color:#cbd5e1;font-size:14px;padding:6px}
+
+.cpcode{font-size:30px;font-weight:800;letter-spacing:2px;margin:14px 0;color:var(--teal);word-break:break-all}
+.cpnote{color:var(--mute);font-size:14px;margin-top:6px}
+
+.orline{text-align:center;color:var(--mute);margin:12px 0 10px;font-size:15px}
+.rad{display:flex!important;align-items:center;gap:10px;font-weight:500!important;margin:8px 0!important}
+.rad input{width:auto!important;min-height:0!important;margin:0!important}
+.prog{height:10px;background:#e5e7eb;border-radius:6px;margin-top:14px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--teal);transition:width .2s}
+.hbtn.wa{background:#25d366;color:#fff;margin-top:12px;margin-bottom:0}
+.modetag{margin-left:8px;background:#eef2f7;border-radius:10px;padding:3px 10px;font-size:13px;font-weight:700;color:#475569}
+
+.ver{text-align:center;color:#94a3b8;font-size:12px;padding:14px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">VN<small>CODE 01</small></div>
+  <div class="actions">
+    <button class="pill" onclick="openCart()">Bundle</button>
+    <button class="icon" onclick="toggleSearch()" aria-label="Search">🔍</button>
+    <button class="icon cart-btn" onclick="openCart()" aria-label="Cart">🛒<span id="cartCount" class="badge">0</span></button>
+    <div id="avatarWrap" class="avwrap hidden">
+      <button id="avatarBtn" class="avatar" onclick="toggleUserMenu()" aria-label="Account">M</button>
+      <div id="userMenu" class="umenu hidden">
+        <button onclick="openAccount('profile')">My Profile</button>
+        <button onclick="openAccount('orders')">Order History</button>
+        <button id="umAdmin" style="display:none" onclick="openAdmin()">🎬 Video QR Generator</button>
+        <button onclick="logout()">Logout</button>
+      </div>
+    </div>
+    <button class="icon" onclick="toggleMenu(true)" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div id="searchBox" class="search hidden">
+  <input id="searchInput" placeholder="Search for wedding, birthday..." oninput="doSearch()">
+  <div id="searchResults" class="results">Start typing to search</div>
+</div>
+
+<div class="promo">GET 1 FREE on 3 templates! Code: <b id="code" onclick="copyCode()">B2G1 ⧉</b></div>
+
+<section class="cats">
+  <h2>Find by Category</h2>
+  <div id="catList" class="chips"></div>
+</section>
+
+<section class="trend">
+  <h2 id="gridTitle">Trending Templates</h2>
+  <div id="grid" class="grid"></div>
+</section>
+
+<!-- Menu drawer -->
+<div id="overlay" class="overlay hidden" onclick="toggleMenu(false)"></div>
+<aside id="menu" class="drawer hidden">
+  <div class="drawer-head"><h3>Menu</h3><button class="icon" onclick="toggleMenu(false)">✕</button></div>
+  <button class="bundle-big" onclick="toggleMenu(false);openCart()">Create bundle <span>LIMITED</span></button>
+  <ul>
+    <li onclick="showCategory('All');toggleMenu(false)">☰ All Templates</li>
+    <li onclick="toggleMenu(false);openHow()">ⓘ How It Use</li>
+    <li onclick="alert('VN CODE 01 – Premium VN Video Templates')">👤 About us</li>
+    <li onclick="alert('Contact: WhatsApp / Email અહીં ઉમેરો')">✉ Contact us</li>
+    <li onclick="showSaved();toggleMenu(false)">♡ Saved Templates <span id="savedCount" class="badge2">0</span></li>
+    <li onclick="toggleMenu(false);openAccount('orders')">▤ Order History</li>
+  </ul>
+  <div id="drawerFoot" class="drawer-foot"></div>
+</aside>
+
+<!-- Cart page -->
+<div id="cartPage" class="cartpage hidden">
+  <div class="cart-top">
+    <button class="back" onclick="closeCart()">← Back to Home</button>
+    <div class="cart-title"><h2>Your Cart</h2><span id="itemsText">0 items</span></div>
+  </div>
+  <div id="offerBox" class="offer"></div>
+  <div id="cartItems"></div>
+  <button id="clearBtn" class="clear" onclick="clearCart()">🗑 Clear cart</button>
+  <div class="coupon">
+    <p>🏷 Have a coupon?</p>
+    <div class="coupon-row">
+      <input id="couponInput" placeholder="Enter coupon code">
+      <button onclick="applyCoupon()">Apply</button>
+    </div>
+    <div id="couponMsg"></div>
+  </div>
+  <div class="paybar">
+    <div><small>Total</small><div id="total" class="total">₹ 0</div></div>
+    <button id="payBtn" class="pay" onclick="checkout()">Login &amp; Proceed to Pay</button>
+  </div>
+</div>
+
+<!-- Login / Register page -->
+<div id="authModal" class="authwrap hidden">
+  <div class="authtop">
+    <button class="back" onclick="closeAuth()">← Back</button>
+    <div class="logo">VN<small>CODE 01</small></div>
+    <span style="width:60px"></span>
+  </div>
+  <div class="authbox">
+    <h1 id="authTitle">Welcome Back 👋</h1>
+    <p id="authSub" class="authsub">Your next reel starts here with ready-to-use VN templates.</p>
+    <div id="authErr" class="autherr"></div>
+    <button class="gbtn" onclick="googleLogin()"><svg width="22" height="22" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg> Continue with Google</button>
+    <div class="or"><span>Or continue with email</span></div>
+    <div id="regFields">
+      <label>First Name <b>*</b></label>
+      <input id="authFirst" type="text" placeholder="Enter your first name" autocomplete="given-name">
+      <label>Last Name</label>
+      <input id="authLast" type="text" placeholder="Enter your last name" autocomplete="family-name">
+      <label>Phone Number</label>
+      <input id="authPhone" type="tel" placeholder="Optional" autocomplete="tel">
+    </div>
+    <label>Email <b>*</b></label>
+    <input id="authEmail" type="email" placeholder="Enter your email" autocomplete="email">
+    <label>Password <b>*</b></label>
+    <div class="pwrow">
+      <input id="authPass" type="password" placeholder="Enter your password" autocomplete="current-password">
+      <button type="button" class="eye" onclick="togglePw()">👁</button>
+    </div>
+    <div id="forgotRow" class="forgot"><a onclick="forgotPassword()">Forgot Password?</a></div>
+    <button id="authBtn" class="authgo" onclick="submitAuth()">Login</button>
+    <div id="authSwitch" class="authsw"></div>
+  </div>
+</div>
+
+<!-- Admin: private video links -->
+<div id="adminPage" class="admpage hidden">
+  <div class="authtop">
+    <button class="back" onclick="closeAdmin()">← Home</button>
+    <div class="logo">VN<small>CODE 01</small></div>
+    <span style="width:60px"></span>
+  </div>
+  <div id="admBody" class="admwrap"></div>
+</div>
+
+<!-- Big-screen video viewer -->
+<div id="vidView" class="vview hidden"><div id="vvBody" class="vvbody"></div></div>
+
+<!-- Test payment sheet -->
+<div id="payModal" class="paywrap hidden">
+  <div class="paybox">
+    <span class="testtag">TEST MODE</span>
+    <h3>Complete Payment</h3>
+    <p id="payAmt" class="payamt"></p>
+    <p class="paynote">This is a practice payment. No real money is charged. Live payments will be connected later.</p>
+    <button class="authgo" onclick="completePay(true)">Pay now (test success)</button>
+    <button class="failbtn" onclick="completePay(false)">Simulate failed payment</button>
+    <button class="cnbtn" onclick="closePay()">Cancel</button>
+  </div>
+</div>
+
+<!-- Payment successful page -->
+<div id="paidPage" class="paidpage hidden">
+  <div class="authtop">
+    <button class="back" onclick="closePaid()">← Home</button>
+    <div class="logo">VN<small>CODE 01</small></div>
+    <span style="width:60px"></span>
+  </div>
+  <div id="paidBody" class="paidwrap"></div>
+</div>
+
+<!-- How it use page -->
+<div id="howPage" class="howpage hidden">
+  <div class="authtop">
+    <button class="back" onclick="closeHow()">← Back</button>
+    <div class="logo">VN<small>CODE 01</small></div>
+    <span style="width:60px"></span>
+  </div>
+  <div id="howBody" class="howwrap"></div>
+</div>
+
+<!-- Template detail page -->
+<div id="tplPage" class="tplpage hidden">
+  <div class="authtop">
+    <button class="back" onclick="closeTemplate()">← Back</button>
+    <div class="logo">VN<small>CODE 01</small></div>
+    <span style="width:60px"></span>
+  </div>
+  <div id="tplBody" class="tplwrap"></div>
+</div>
+
+<!-- My Account page -->
+<div id="accountPage" class="acctpage hidden">
+  <div class="authtop">
+    <button class="back" onclick="closeAccount()">← Home</button>
+    <div class="logo">VN<small>CODE 01</small></div>
+    <span style="width:60px"></span>
+  </div>
+  <div class="acctwrap">
+    <h1>My Account</h1>
+    <div id="acctBody"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+<script>window.addEventListener("error",function(e){if(e.message==="Script error.")return;alert("JS Error: "+e.message+" ("+(e.filename||"").split("/").pop()+":"+e.lineno+")")});</script>
+<div class="ver">VN CODE 01 · v35</div>
+<script>
+// તમારા Admin Account નો User UID અહીં મૂકો (Firebase > Authentication > Users). ખાલી હોય ત્યાં સુધી Admin પેજ બંધ રહે.
+const ADMIN_UID = "9GNIaRYUiwVN5nBLRvr34i496XJ3";
+// Admin ઓળખવા Email (UI માટે). દા.ત. ["tamaro@gmail.com"]
+const ADMIN_EMAILS = [];
+// Video Upload માટે Cloudinary (Free). cloud = Cloud name, preset = Unsigned upload preset નું નામ
+const CLOUDINARY = {cloud: "", preset: ""};
+const FS_BASE = "https://firestore.googleapis.com/v1/projects/vncode01-b6944/databases/(default)/documents";
+window.pendingShare = null;
+window.pendingCoupon = null;
+const PRICE = 49, MRP = 299;
+const CATS = ["Birthday","Couple","Bestie","Festival","Personal","Travel","Friends","Wedding"];
+const COLORS = {Birthday:"#e11d48",Couple:"#be185d",Bestie:"#7c3aed",Festival:"#ea580c",Personal:"#0f766e",Travel:"#0284c7",Friends:"#4d7c0f",Wedding:"#b45309"};
+const ICONS = {Birthday:"🎂",Couple:"❤️",Bestie:"🤝",Festival:"🎉",Personal:"📸",Travel:"✈️",Friends:"👥",Wedding:"💍"};
+
+// નવા Template અહીં ઉમેરો. video: "videos/abc.mp4" (ખાલી હોય તો Placeholder દેખાશે)
+const TEMPLATES = [
+  {id:1,name:"Birthday Vibes Reel",cat:"Birthday",video:"videos/sample.mp4",poster:"videos/sample.jpg"},
+  {id:2,name:"Happy Birthday Bestie",cat:"Bestie",video:"videos/sample.mp4",poster:"videos/sample.jpg"},
+  {id:3,name:"Love Story Collage",cat:"Couple",video:""},
+  {id:4,name:"Our Forever Moments",cat:"Couple",video:""},
+  {id:5,name:"Shubh Diwali Wishes",cat:"Festival",video:""},
+  {id:6,name:"Holi Colours Reel",cat:"Festival",video:""},
+  {id:7,name:"Travel Diaries",cat:"Travel",video:""},
+  {id:8,name:"Mountain Trip Memories",cat:"Travel",video:""},
+  {id:9,name:"My Aesthetic Reel",cat:"Personal",video:""},
+  {id:10,name:"Friends Forever",cat:"Friends",video:""},
+  {id:11,name:"Wedding Entry Reel",cat:"Wedding",video:""},
+  {id:12,name:"Besties Photo Beat",cat:"Bestie",video:""},
+  {id:13,name:"Happy Birthday",cat:"Birthday",video:"videos/happy-birthday.mp4",poster:"videos/happy-birthday.jpg",qr:"images/qr-happy-birthday.png",vnId:"952794",tags:["Happy Birthday Reel","Birthday VN Template","VN Video Template"]}
+];
+const STARTER = TEMPLATES.map(t => Object.assign({}, t));   // શરૂઆતના Templates (Import માટે)
+
+const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) || d; } catch { return d; } };
+let cart = load("vn_cart", []), saved = load("vn_saved", []), couponOn = load("vn_coupon", false), freeCode = load("vn_free", "");
+let currentCat = "All";
+
+const $ = id => document.getElementById(id);
+const persist = () => {
+  localStorage.setItem("vn_cart", JSON.stringify(cart));
+  localStorage.setItem("vn_saved", JSON.stringify(saved));
+  localStorage.setItem("vn_coupon", JSON.stringify(couponOn));
+  localStorage.setItem("vn_free", JSON.stringify(freeCode));
+};
+const byId = id => TEMPLATES.find(t => t.id === id) || (window.ALL_TPL || []).find(t => t.id === id);
+
+function toast(t){ const el=$("toast"); el.textContent=t; el.classList.remove("hidden"); clearTimeout(el._t); el._t=setTimeout(()=>el.classList.add("hidden"),1800); }
+
+/* ---------- Categories & grid ---------- */
+function renderCats(){
+  $("catList").innerHTML = ["All",...CATS].map(c =>
+    `<button class="chip ${c===currentCat?"active":""}" onclick="showCategory('${c}')">${c}</button>`).join("");
+}
+function showCategory(c){
+  currentCat = c; renderCats();
+  $("gridTitle").textContent = c==="All" ? "Trending Templates" : c+" Templates";
+  renderGrid(c==="All" ? TEMPLATES : TEMPLATES.filter(t=>t.cat===c));
+}
+function showSaved(){
+  currentCat="Saved"; renderCats();
+  $("gridTitle").textContent="Saved Templates";
+  renderGrid(TEMPLATES.filter(t=>saved.includes(t.id)));
+}
+function mediaHTML(t){
+  if(t.video) return `<video playsinline muted preload="metadata" ${t.poster ? `poster="${t.poster}"` : ""} src="${t.video}#t=0.1" style="pointer-events:none"></video>
+    <div class="vcover" onclick="openViewer(${t.id})"><div class="play">▶</div></div>`;
+  return `<span>${ICONS[t.cat]}</span><div class="play" onclick="openTemplate(${t.id})">▶</div>`;
+}
+function cardHTML(t){
+  const inCart = cart.includes(t.id), sv = saved.includes(t.id);
+  return `<div class="card">
+    <div class="thumb" style="background:linear-gradient(160deg,${COLORS[t.cat]},#000)">
+      ${mediaHTML(t)}
+      <button class="heart ${sv ? "on" : ""}" data-heart="${t.id}" onclick="toggleSave(${t.id})">${sv ? "♥" : "♡"}</button>
+    </div>
+    <div class="info">
+      <div class="name" onclick="openTemplate(${t.id})">${t.name}</div>
+      <div class="price">₹${PRICE} <s>₹${MRP}</s></div>
+      <button class="add ${inCart ? "in" : ""}" data-add="${t.id}" onclick="${inCart ? "openCart()" : `addToCart(${t.id})`}">${inCart ? "✓ View Cart" : "🛒 Add to Cart"}</button>
+    </div></div>`;
+}
+function renderGrid(list){
+  if(!list.length){ $("grid").innerHTML='<p style="grid-column:1/3;text-align:center;color:#64748b;padding:30px">No templates found</p>'; return; }
+  $("grid").innerHTML = list.map(cardHTML).join("");
+}
+// Re-render ન કરતાં બટન/હાર્ટ જ બદલો (Video ચાલતો રહે)
+function syncCards(){
+  document.querySelectorAll("[data-add]").forEach(b => {
+    const id = +b.dataset.add, inCart = cart.includes(id);
+    const inViewer = !!b.closest && !!b.closest("#vidView");
+    b.className = "add" + (inCart ? " in" : "");
+    b.textContent = inCart ? "✓ View Cart" : (inViewer ? "🛒 ₹" + PRICE : "🛒 Add to Cart");
+    b.onclick = inCart ? () => { closeViewer(); openCart(); } : () => addToCart(id);
+  });
+  document.querySelectorAll("[data-heart]").forEach(b => {
+    const on = saved.includes(+b.dataset.heart);
+    b.classList.toggle("on", on); b.textContent = on ? "♥" : "♡";
+  });
+  document.querySelectorAll("[data-savebtn]").forEach(b => {
+    const on = saved.includes(+b.dataset.savebtn);
+    b.textContent = on ? "♥ Saved" : "♡ Save";
+  });
+}
+function refreshGrid(){
+  if(currentCat==="Saved") showSaved();
+  else syncCards();
+  syncCards();
+}
+
+/* ---------- Favourites ---------- */
+function toggleSave(id){
+  saved = saved.includes(id) ? saved.filter(x=>x!==id) : [...saved,id];
+  persist(); updateBadges(); refreshGrid();
+}
+
+/* ---------- Cart ---------- */
+function addToCart(id){
+  if(!cart.includes(id)) cart.push(id);
+  persist(); updateBadges(); refreshGrid(); toast("Added to cart");
+}
+function removeItem(id){ cart = cart.filter(x=>x!==id); persist(); updateBadges(); renderCart(); refreshGrid(); }
+function clearCart(){ cart=[]; couponOn=false; freeCode=""; persist(); updateBadges(); renderCart(); refreshGrid(); }
+function openCart(){ closeViewer(); closeTemplate(); closeHow(); closePaid(); $("cartPage").classList.remove("hidden"); renderCart(); }
+function closeCart(){ $("cartPage").classList.add("hidden"); }
+
+function calc(){
+  const n = cart.length;
+  let free = 0;
+  if(couponOn) free = Math.floor(n/3);              // Buy 2 Get 1 FREE
+  else if(freeCode) free = Math.min(1, n);           // ગમે તે એક Template મફત (ખાનગી Code)
+  return { n, free, total: (n-free)*PRICE };
+}
+function renderCart(){
+  const {n,free,total} = calc();
+  $("itemsText").textContent = n+" item"+(n===1?"":"s");
+  const left = 3 - (n % 3 || 3);
+  const pct = n===0 ? 0 : ((n%3)||3)/3*100;
+  $("offerBox").innerHTML = n===0
+    ? "Cart ખાલી છે"
+    : freeCode ? '🎁 Free template coupon applied!<div class="bar"><i style="width:100%"></i></div>'
+    : (left===0
+        ? `🎉 Buy 2 Get 1 FREE unlocked!${couponOn?"":" Code <em>B2G1</em> નાખો"}`
+        : `Add <em>${left}</em> more to get 1 FREE`) + `<div class="bar"><i style="width:${pct}%"></i></div>`;
+  $("cartItems").innerHTML = cart.map((id,i) => {
+    const t = byId(id);
+    const isFree = couponOn ? (i >= n - free) : (freeCode ? i === 0 : false);
+    return `<div class="item">
+      <div class="mini" style="background:linear-gradient(160deg,${COLORS[t.cat]},#000)">${ICONS[t.cat]}</div>
+      <div class="mid"><b>${t.name}</b><span>${t.cat}</span></div>
+      <div class="right">${isFree?`<s>₹${PRICE}.00</s><b style="color:#16a34a">₹0.00</b><span class="ok">100% OFF</span>`:`<b>₹${PRICE}.00</b>`}</div>
+      <button class="del" onclick="removeItem(${id})">🗑</button></div>`;
+  }).join("");
+  $("clearBtn").style.display = n ? "block" : "none";
+  $("total").textContent = "₹ "+total.toFixed(2);
+  $("couponMsg").innerHTML = couponOn ? '<span style="color:#16a34a">✓ Coupon "B2G1" applied successfully!</span>'
+    : (freeCode ? '<span style="color:#16a34a">✓ Free template coupon applied!</span>' : "");
+  if(couponOn) $("couponInput").value = "B2G1";
+}
+async function applyCoupon(){
+  const msg = $("couponMsg");
+  const v = $("couponInput").value.trim().toUpperCase();
+  const bad = t => { msg.innerHTML = '<span style="color:#ef4444">' + t + '</span>'; };
+  if(v === "B2G1"){ couponOn = true; freeCode = ""; persist(); renderCart(); return; }
+  if(/^VN-[A-HJKMNP-Z2-9]{5}-[A-HJKMNP-Z2-9]{5}$/.test(v)){
+    if(!window.vnUser){
+      window.pendingCoupon = v; closeCart(); openAuth("login");
+      const e = $("authErr"); e.classList.add("ok"); e.textContent = "Please log in to use your coupon.";
+      return;
+    }
+    msg.innerHTML = '<span style="color:#64748b">Checking coupon…</span>';
+    try{
+      const r = await fsFetch("/coupons/" + v);
+      if(r.status === 404){ bad("Invalid coupon code"); return; }
+      if(!r.ok){ bad("Could not check the coupon. Please try again."); return; }
+      const f = (r.data && r.data.fields) || {};
+      if(f.active && f.active.booleanValue === false){ bad("This coupon is no longer active"); return; }
+      freeCode = v; couponOn = false; persist(); $("couponInput").value = ""; renderCart();
+    }catch(e){ bad("Network error. Please try again."); }
+    return;
+  }
+  bad("Invalid coupon code");
+}
+async function verifyFreeCode(code){
+  try{
+    const r = await fsFetch("/coupons/" + code);
+    if(!r.ok) return (r.status === 404 || r.status === 403) ? false : null;
+    const f = (r.data && r.data.fields) || {};
+    return !(f.active && f.active.booleanValue === false);
+  }catch(e){ return null; }
+}
+function copyCode(){
+  if(navigator.clipboard) navigator.clipboard.writeText("B2G1");
+  toast("Code B2G1 copied");
+}
+function openAuth(m){
+  $("authModal").classList.remove("hidden");
+  window.scrollTo(0,0);
+  if(window.setMode) window.setMode(m || "login");
+}
+function closeAuth(){ $("authModal").classList.add("hidden"); }
+async function checkout(){
+  if(!cart.length){ toast("Your cart is empty"); return; }
+  if(!window.vnUser){ openAuth("register"); return; }
+  if(freeCode){
+    const ok = await verifyFreeCode(freeCode);
+    if(ok === null){ toast("Could not verify the coupon. Please try again."); return; }
+    if(!ok){ freeCode = ""; persist(); renderCart(); toast("This coupon is no longer valid"); return; }
+  }
+  openPay();
+}
+
+/* ---------- Search & Menu ---------- */
+function toggleSearch(){
+  $("searchBox").classList.toggle("hidden");
+  if(!$("searchBox").classList.contains("hidden")) $("searchInput").focus();
+}
+function doSearch(){
+  const q = $("searchInput").value.trim().toLowerCase();
+  const box = $("searchResults");
+  if(!q){ box.textContent="Start typing to search"; return; }
+  const found = TEMPLATES.filter(t => (t.name+" "+t.cat).toLowerCase().includes(q));
+  box.innerHTML = found.length
+    ? found.map(t=>`<div class="row" onclick="openFromSearch(${t.id})"><span>${t.name}</span><b>₹${PRICE}</b></div>`).join("")
+    : "કંઈ મળ્યું નથી";
+}
+function openFromSearch(id){
+  $("searchBox").classList.add("hidden");
+  $("searchInput").value = "";
+  openTemplate(id);
+}
+function toggleMenu(open){
+  $("menu").classList.toggle("hidden",!open);
+  $("overlay").classList.toggle("hidden",!open);
+}
+
+function updateBadges(){
+  $("cartCount").textContent = cart.length;
+  $("cartCount").style.display = cart.length ? "flex" : "none";
+  $("savedCount").textContent = saved.length;
+}
+
+renderCats(); showCategory("All"); updateBadges();
+
+/* ---------- Customer Login (Firebase Auth REST API: Storage/SDK વગર ચાલે) ---------- */
+const FB_KEY = "AIzaSyBAR4H69DCNCInXClmcMn0a7L8evowhY7k";
+const FB_URL = "https://identitytoolkit.googleapis.com/v1/accounts:";
+let vnMode = "login";
+window.vnUser = null;
+try{ window.vnUser = JSON.parse(localStorage.getItem("vn_user")); }catch(e){}
+
+function refreshUI(){
+  const pay = $("payBtn");
+  if(pay) pay.textContent = window.vnUser ? "Proceed to Pay" : "Login & Proceed to Pay";
+  const ua = $("umAdmin"); if(ua) ua.style.display = isAdmin() ? "block" : "none";
+  const aw = $("avatarWrap");
+  if(aw){ aw.classList.toggle("hidden", !window.vnUser); if(window.vnUser) $("avatarBtn").textContent = vnInitial(); }
+  const foot = $("drawerFoot");
+  if(foot) foot.innerHTML = window.vnUser
+    ? '<p style="text-align:center;color:#64748b;font-size:14px">' + esc(window.vnUser.email) + '</p>' + (isAdmin() ? '<button class="btn-outline" onclick="toggleMenu(false);openAdmin()">🎬 Video QR Generator</button>' : '') + '<button class="btn-solid" onclick="toggleMenu(false);openAccount(\'profile\')">My Account</button><button class="btn-outline" onclick="logout()">Logout</button>'
+    : '<button class="btn-outline" onclick="toggleMenu(false);openAuth(\'login\')">Login</button><button class="btn-solid" onclick="toggleMenu(false);openAuth(\'register\')">Register</button>';
+}
+function setMode(m){
+  vnMode = m;
+  const login = m === "login";
+  $("authTitle").textContent = login ? "Welcome Back 👋" : "Create Account ✨";
+  $("authSub").textContent = login ? "Your next reel starts here with ready-to-use VN templates." : "Register once and get lifetime access to every template you buy.";
+  $("authBtn").textContent = login ? "Login" : "Register";
+  $("forgotRow").style.display = login ? "block" : "none";
+  $("regFields").style.display = login ? "none" : "block";
+  $("authPass").setAttribute("autocomplete", login ? "current-password" : "new-password");
+  $("authSwitch").innerHTML = login
+    ? "Don't you have an account? <a onclick=\"setMode('register')\">Register</a>"
+    : "Already have an account? <a onclick=\"setMode('login')\">Login</a>";
+  $("authErr").textContent = ""; $("authErr").classList.remove("ok");
+}
+function togglePw(){ const p = $("authPass"); p.type = p.type === "password" ? "text" : "password"; }
+function vnLoadScript(src){
+  return new Promise((res, rej) => {
+    const el = document.createElement("script");
+    el.src = src; el.onload = res; el.onerror = () => rej(new Error("Could not load " + src));
+    document.head.appendChild(el);
+  });
+}
+async function googleLogin(){
+  const err = $("authErr");
+  err.classList.remove("ok"); err.textContent = "";
+  const h = location.hostname, okOrigin = location.protocol === "https:" || h === "localhost" || h === "127.0.0.1";
+  if(!okOrigin){
+    err.textContent = "Google login works only when the website is opened online (https) or from the Acode preview (localhost). Please use email for now.";
+    return;
+  }
+  try{
+    if(typeof firebase === "undefined"){
+      await vnLoadScript("https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js");
+      await vnLoadScript("https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js");
+    }
+    if(!firebase.apps.length) firebase.initializeApp({
+      apiKey: FB_KEY, authDomain: "vncode01-b6944.firebaseapp.com",
+      projectId: "vncode01-b6944", appId: "1:574338352215:web:d6b2abf8c99add5549cf12"
+    });
+    const provider = new firebase.auth.GoogleAuthProvider();
+    provider.setCustomParameters({prompt: "select_account"});   // Customer ના બધા Google Email બતાવશે
+    const cred = await firebase.auth().signInWithPopup(provider);
+    const u = cred.user;
+    window.vnUser = {email: u.email, uid: u.uid, idToken: await u.getIdToken(), refreshToken: u.refreshToken, tokenTime: Date.now(), name: u.displayName || ""};
+    try{ localStorage.setItem("vn_user", JSON.stringify(window.vnUser)); }catch(e){}
+    refreshUI(); closeAuth();
+    toast("Login successful ✓");
+    if(afterLoginHook()) return;
+    if(!$("cartPage").classList.contains("hidden")) checkout();
+  }catch(e){
+    const M = {
+      "auth/operation-not-allowed": "Google sign-in is not enabled in Firebase yet.",
+      "auth/unauthorized-domain": "This website's domain is not added in Firebase Authorized domains.",
+      "auth/popup-blocked": "Popup was blocked. Please allow popups and try again.",
+      "auth/popup-closed-by-user": "Google sign-in was closed. Please try again.",
+      "auth/cancelled-popup-request": "Google sign-in was cancelled. Please try again.",
+      "auth/network-request-failed": "Network error. Please check your internet."
+    };
+    err.textContent = M[e.code] || ("Google login error: " + (e.code || e.message));
+  }
+}
+async function forgotPassword(){
+  const err = $("authErr"), email = $("authEmail").value.trim();
+  err.classList.remove("ok");
+  if(!email){ err.textContent = "Enter your email above, then tap Forgot Password."; return; }
+  try{
+    const r = await fetch(FB_URL + "sendOobCode?key=" + FB_KEY, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({requestType:"PASSWORD_RESET", email: email})});
+    const d = await r.json();
+    if(d.error){ err.textContent = AUTH_MSG[(d.error.message||"").split(" ")[0]] || ("Error: " + d.error.message); }
+    else { err.classList.add("ok"); err.textContent = "Password reset link sent to " + email + ". Check your inbox/spam."; }
+  }catch(e){ err.textContent = "Network error. Please check your internet."; }
+}
+const AUTH_MSG = {
+  "EMAIL_EXISTS": "An account with this email already exists. Please log in.",
+  "INVALID_LOGIN_CREDENTIALS": "Incorrect email or password.",
+  "INVALID_PASSWORD": "Incorrect password.",
+  "EMAIL_NOT_FOUND": "No account found with this email. Please register.",
+  "INVALID_EMAIL": "Please enter a valid email.",
+  "MISSING_PASSWORD": "Please enter your password.",
+  "OPERATION_NOT_ALLOWED": "Email/Password sign-in is not enabled in Firebase.",
+  "CONFIGURATION_NOT_FOUND": "Firebase Authentication is not set up yet (Get started).",
+  "TOO_MANY_ATTEMPTS_TRY_LATER": "Too many attempts. Please try again later.",
+  "USER_DISABLED": "This account has been disabled."
+};
+async function submitAuth(){
+  const err = $("authErr"), btn = $("authBtn");
+  const email = $("authEmail").value.trim(), pw = $("authPass").value;
+  if(!email || !pw){ err.textContent = "Please enter email and password."; return; }
+  const first = $("authFirst").value.trim();
+  if(vnMode === "register" && !first){ err.textContent = "Please enter your first name."; return; }
+  btn.disabled = true; err.textContent = ""; err.classList.remove("ok");
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), 20000);
+  try{
+    const r = await fetch(FB_URL + (vnMode === "login" ? "signInWithPassword" : "signUp") + "?key=" + FB_KEY, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({email: email, password: pw, returnSecureToken: true}),
+      signal: ctl.signal
+    });
+    const d = await r.json();
+    if(d.error){
+      const code = (d.error.message || "").split(" ")[0];
+      const weak = code === "WEAK_PASSWORD" ? "Password must be at least 6 characters." : null;
+      err.textContent = weak || AUTH_MSG[code] || ("Error: " + (d.error.message || r.status));
+    } else {
+      window.vnUser = {email: d.email, uid: d.localId, idToken: d.idToken, refreshToken: d.refreshToken, tokenTime: Date.now(), name: d.displayName || ""};
+      try{ localStorage.setItem("vn_user", JSON.stringify(window.vnUser)); }catch(e){}
+      if(vnMode === "register"){
+        const last = $("authLast").value.trim();
+        vnSaveProfile({first: first, last: last, phone: $("authPhone").value.trim(), since: Date.now()});
+        window.vnUser.name = (first + " " + last).trim();
+        try{ localStorage.setItem("vn_user", JSON.stringify(window.vnUser)); }catch(e){}
+        // નામ Firebase માં પણ સેવ (બીજા ફોનમાં Login કરે તો પણ નામ મળે)
+        fetch(FB_URL + "update?key=" + FB_KEY, {method: "POST", headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({idToken: d.idToken, displayName: window.vnUser.name, returnSecureToken: false})}).catch(() => {});
+      }
+      refreshUI(); closeAuth(); $("authPass").value = "";
+      toast(vnMode === "register" ? "Account created ✓" : "Login successful ✓");
+      if(afterLoginHook()) { clearTimeout(t); btn.disabled = false; return; }
+      if(!$("cartPage").classList.contains("hidden")) checkout();
+    }
+  }catch(e){
+    err.textContent = e.name === "AbortError" ? "No response. Please check your internet and try again." : "Network error. Please check your internet (" + e.message + ")";
+  }
+  clearTimeout(t);
+  btn.disabled = false;
+}
+function logout(){
+  window.vnUser = null; freeCode = ""; persist();
+  try{ localStorage.removeItem("vn_user"); }catch(e){}
+  $("userMenu").classList.add("hidden"); closeAccount();
+  refreshUI(); toast("Logged out");
+}
+
+/* ---------- My Account: Profile + Order History ---------- */
+let acctTab = "profile", acctEdit = false;
+function esc(x){ return String(x == null ? "" : x).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+function vnKey(p){ return p + (window.vnUser ? window.vnUser.uid : "guest"); }
+function vnGetProfile(){
+  let p = {}; try{ p = JSON.parse(localStorage.getItem(vnKey("vn_profile_"))) || {}; }catch(e){}
+  const u = window.vnUser || {};
+  if(p.first === undefined){
+    const nm = (u.name || "").trim();
+    if(nm){ const parts = nm.split(/\s+/); p.first = parts[0]; p.last = parts.slice(1).join(" "); }
+    else {
+      const base = (u.email || "").split("@")[0].replace(/[0-9._-]+$/, "");
+      p.first = base ? base.charAt(0).toUpperCase() + base.slice(1) : "Customer"; p.last = "";
+    }
+  }
+  p.phone = p.phone || "";
+  return p;
+}
+function vnSaveProfile(p){ try{ localStorage.setItem(vnKey("vn_profile_"), JSON.stringify(p)); }catch(e){} }
+function vnInitial(){
+  const p = vnGetProfile();
+  return ((p.first || (window.vnUser && window.vnUser.email) || "?").charAt(0) || "?").toUpperCase();
+}
+function vnOrders(){ try{ return JSON.parse(localStorage.getItem(vnKey("vn_orders_"))) || []; }catch(e){ return []; } }
+
+function toggleUserMenu(){ $("userMenu").classList.toggle("hidden"); }
+document.addEventListener("click", e => {
+  const w = $("avatarWrap");
+  if(w && !w.contains(e.target)) $("userMenu").classList.add("hidden");
+});
+function openAccount(tab){
+  $("userMenu").classList.add("hidden"); closeViewer(); closeHow(); closeTemplate(); closePaid();
+  if(!window.vnUser){ openAuth("login"); return; }
+  acctTab = tab || "profile"; acctEdit = false;
+  $("cartPage").classList.add("hidden");
+  $("accountPage").classList.remove("hidden");
+  window.scrollTo(0, 0);
+  renderAccount(); vnFetchSince();
+}
+function closeAccount(){ $("accountPage").classList.add("hidden"); }
+function setTab(t){ acctTab = t; acctEdit = false; renderAccount(); }
+function editProfile(on){ acctEdit = on; renderAccount(); }
+
+function renderAccount(){
+  const p = vnGetProfile(), u = window.vnUser || {};
+  const tabs = '<div class="tabs"><button class="' + (acctTab === "profile" ? "on" : "") + '" onclick="setTab(\'profile\')">👤 My Profile</button>' +
+               '<button class="' + (acctTab === "orders" ? "on" : "") + '" onclick="setTab(\'orders\')">📦 Order History</button></div>';
+  let body = "";
+  if(acctTab === "profile"){
+    const since = p.since ? new Date(p.since).toLocaleString("en-US", {month: "long", year: "numeric"}) : "";
+    const full = ((p.first || "") + " " + (p.last || "")).trim();
+    const box = v => '<div class="fbox">' + (v ? esc(v) : '<span style="color:#94a3b8">Not provided</span>') + '</div>';
+    body = '<div class="pcard"><h2 style="text-align:center">Profile Information</h2>' +
+      (acctEdit ? "" : '<button class="editbtn" onclick="editProfile(true)">✎ Edit Profile</button>') +
+      '<div class="pid"><div class="pav">' + esc(vnInitial()) + '</div><div><b>' + esc(full || u.email) + '</b>' + (since ? '<span>Member since ' + since + '</span>' : "") + '</div></div>' +
+      '<label>First Name <i>*</i></label>' + (acctEdit ? '<input id="pfFirst" value="' + esc(p.first) + '">' : box(p.first)) +
+      '<label>Last Name</label>' + (acctEdit ? '<input id="pfLast" value="' + esc(p.last) + '">' : box(p.last)) +
+      '<label>Email Address</label><div class="fbox">' + esc(u.email) + '</div><small>Email cannot be changed</small>' +
+      '<label>Phone Number</label>' + (acctEdit ? '<input id="pfPhone" type="tel" value="' + esc(p.phone) + '" placeholder="Enter phone number">' : box(p.phone)) +
+      (acctEdit ? '<div class="prow"><button class="cn" onclick="editProfile(false)">Cancel</button><button class="sv" onclick="saveProfile()">Save</button></div>' : "") +
+      '</div>';
+  } else {
+    const list = vnOrders();
+    body = '<div class="ohead">Order History</div><div class="olist">' + (list.length ? list.map((o, i) => {
+      const items = o.items || [];
+      const det = items.map((it, k) => '<div class="oit"><span>• ' + esc(it.name) + '</span>' +
+        (o.status === "Paid" ? '<a class="dl" onclick="openQrItem(' + i + ',' + k + ')">Download QR</a>' : "") +
+        (byId(it.id) && byId(it.id).video ? ' <a class="dl" onclick="openTemplateVideo(' + it.id + ')">▶ Watch video</a>' : "") + '</div>').join("");
+      return '<div class="order"><b>Order: ' + esc(o.id) + (o.test ? ' <span class="tst">TEST</span>' : "") + '</b><div class="dt">' + esc(fmtDate(o.date)) + '</div>' +
+        '<div class="st ' + esc(o.status) + '">' + esc(o.status) + '</div><div class="am">₹ ' + Number(o.amount).toFixed(2) + '</div>' +
+        '<a class="vd" onclick="document.getElementById(\'od' + i + '\').classList.toggle(\'hidden\')">View Order Details ⌄</a>' +
+        '<div id="od' + i + '" class="odet hidden">' + det +
+        (o.status === "Failed" ? '<button class="retry" onclick="retryOrder(' + i + ')">Try again</button>' : "") + '</div></div>';
+    }).join("") : '<div class="empty">No orders yet.<br><button onclick="closeAccount()">Browse Templates</button></div>') + '</div>';
+  }
+  $("acctBody").innerHTML = tabs + body;
+}
+function saveProfile(){
+  const first = $("pfFirst").value.trim();
+  if(!first){ toast("First name is required"); return; }
+  const p = vnGetProfile();
+  p.first = first; p.last = $("pfLast").value.trim(); p.phone = $("pfPhone").value.trim();
+  vnSaveProfile(p); acctEdit = false; renderAccount(); refreshUI(); toast("Profile updated ✓");
+}
+async function vnFetchSince(){
+  const u = window.vnUser;
+  if(!u || !u.idToken) return;
+  const p = vnGetProfile();
+  if(p.since) return;
+  try{
+    const r = await fetch(FB_URL + "lookup?key=" + FB_KEY, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({idToken: u.idToken})});
+    const d = await r.json();
+    const ms = d.users && d.users[0] && Number(d.users[0].createdAt);
+    p.since = ms || Date.now();
+  }catch(e){ p.since = Date.now(); }
+  vnSaveProfile(p);
+  if(!$("accountPage").classList.contains("hidden")) renderAccount();
+}
+
+
+/* ---------- Template detail page ---------- */
+let curTpl = null;
+const INCLUDED = [
+  ["Unlimited Personal Use", "Use this template for as many personal reels as you like."],
+  ["Same Look as the Preview", "Replace the clips with yours and get the same style as the preview video."],
+  ["Lifetime Access", "Buy once and the template stays in your account forever."],
+  ["Beginner-Friendly Editing", "No editing skills needed. Just replace the clips in the VN app."],
+  ["Responsive Support", "Stuck anywhere? Contact us and we will help you."]
+];
+function tplDescription(t){
+  return t.desc || `Looking for a ${t.cat.toLowerCase()} reel that feels special? "${t.name}" is a ready-to-use VN template. Replace the sample clips with your own photos and videos, keep the same beat-synced edits and effects, and export a reel that looks just like the preview. Perfect for Instagram Reels, WhatsApp Status and YouTube Shorts.`;
+}
+function openTemplate(id){
+  const t = byId(id); if(!t) return;
+  curTpl = id;
+  document.querySelectorAll("video").forEach(v => v.pause());
+  renderTemplate();
+  $("tplPage").classList.remove("hidden");
+  $("tplPage").scrollTop = 0;
+  try{ history.replaceState(null, "", "#t=" + id); }catch(e){}
+}
+function closeTemplate(){
+  const pg = $("tplPage");
+  if(!pg || pg.classList.contains("hidden")) return;
+  pg.classList.add("hidden"); $("tplBody").innerHTML = ""; curTpl = null;
+  try{ history.replaceState(null, "", location.pathname + location.search); }catch(e){}
+}
+function renderTemplate(){
+  const t = byId(curTpl); if(!t) return;
+  const inCart = cart.includes(t.id), sv = saved.includes(t.id);
+  const tags = t.tags || [t.name + " Reel", t.cat + " VN Template", "VN Video Template"];
+  const more = TEMPLATES.filter(x => x.id !== t.id).sort((a, b) => (b.cat === t.cat) - (a.cat === t.cat)).slice(0, 4);
+  const media = t.video
+    ? `<video controls playsinline preload="metadata" ${t.poster ? `poster="${t.poster}"` : ""} src="${t.video}"></video>`
+    : `<span>${ICONS[t.cat]}</span><div class="play">▶</div>`;
+  $("tplBody").innerHTML = `
+    <div class="crumb"><a onclick="closeTemplate()">Home</a> / <a onclick="closeTemplate();showCategory('All')">Templates</a> / <a onclick="closeTemplate();showCategory('${t.cat}')">${t.cat}</a> / <span>${esc(t.name)}</span></div>
+    <div class="tplvid" style="background:linear-gradient(160deg,${COLORS[t.cat]},#000)">${media}</div>
+    <div class="trow"><span class="tchip">${t.cat}</span>
+      <div class="tact"><button onclick="shareTpl(${t.id})">⤴ Share</button><button data-savebtn="${t.id}" onclick="toggleSave(${t.id})">${sv ? "♥ Saved" : "♡ Save"}</button></div></div>
+    <h1 class="ttitle">${esc(t.name)}</h1>
+    <p id="tplDesc" class="tdesc clamp">${esc(tplDescription(t))}</p>
+    <a id="tplRm" class="rm" onclick="toggleDesc()">Read More ⌄</a>
+    <div class="ttags">${tags.map(x => `<span>${esc(x)}</span>`).join("")}</div>
+    <h3 class="tinc">What's Included:</h3>
+    ${INCLUDED.map(r => `<div class="irow"><span class="tick">✓</span><b>${r[0]}</b><button class="ibtn" onclick="this.parentElement.nextElementSibling.classList.toggle('hidden')">ⓘ</button></div><div class="inote hidden">${r[1]}</div>`).join("")}
+    <div class="tprice"><div>₹${PRICE} <s>₹${MRP}</s></div><span class="savepill">Save ₹${MRP - PRICE}</span></div>
+    <button class="add big ${inCart ? "in" : ""}" data-add="${t.id}" onclick="${inCart ? "openCart()" : `addToCart(${t.id})`}">${inCart ? "✓ View Cart" : "🛒 Add to Cart"}</button>
+    <h2 class="tmore">More Templates</h2>
+    <div class="grid">${more.map(cardHTML).join("")}</div>`;
+}
+function toggleDesc(){
+  const d = $("tplDesc"); d.classList.toggle("clamp");
+  $("tplRm").textContent = d.classList.contains("clamp") ? "Read More ⌄" : "Read Less ⌃";
+}
+async function shareTpl(id){
+  const t = byId(id);
+  const base = location.protocol.indexOf("http") === 0 ? location.origin + location.pathname : location.href.split("#")[0];
+  const link = base + "#t=" + id;
+  if(navigator.share){
+    try{ await navigator.share({title: t.name, text: t.name + " – VN video template", url: link}); return; }
+    catch(e){ if(e && e.name === "AbortError") return; }
+  }
+  try{ await navigator.clipboard.writeText(link); toast("Link copied"); }
+  catch(e){ window.prompt("Copy this link:", link); }
+}
+// એક સાથે ફક્ત એક Video ચાલે
+document.addEventListener("play", e => {
+  document.querySelectorAll("video").forEach(v => { if(v !== e.target) v.pause(); });
+}, true);
+{ const m = location.hash.match(/^#t=(\d+)/); if(m && byId(+m[1])) openTemplate(+m[1]); }
+
+
+/* ---------- How It Use page ---------- */
+const HOW_SVG = (inner) => `<svg class="hph" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="1.5" width="297" height="397" rx="30" fill="#fff" stroke="#e5e7eb" stroke-width="3"/>${inner}</svg>`;
+const HOW_HL = (cx, cy, rx, ry) => `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="none" stroke="#ef4444" stroke-width="4"/>`;
+const HOW_T = (x, y, size, txt, o) => { o = o || {}; return `<text x="${x}" y="${y}" font-size="${size}" font-family="Arial,sans-serif" fill="${o.f || "#0f172a"}" font-weight="${o.w || 400}" text-anchor="${o.a || "start"}">${txt}</text>`; };
+
+function howIllus(n){
+  if(n === 1) return HOW_SVG(
+    HOW_T(24, 46, 22, "VN", {w: 800}) + HOW_T(24, 60, 9, "CODE 01") +
+    `<circle cx="258" cy="42" r="14" fill="#1b806e"/>` + HOW_T(258, 47, 14, "R", {f: "#fff", w: 700, a: "middle"}) +
+    `<defs><linearGradient id="gA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b806e"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs>` +
+    `<rect x="26" y="80" width="248" height="236" rx="16" fill="#fff" stroke="#e8edf3" stroke-width="2"/>` +
+    HOW_T(150, 108, 13, "Your Template", {w: 700, a: "middle"}) +
+    `<rect x="108" y="120" width="84" height="122" rx="8" fill="url(#gA)"/>` +
+    HOW_T(150, 262, 9, "Open it in VN Video Editor", {f: "#64748b", a: "middle"}) +
+    `<rect x="72" y="278" width="156" height="30" rx="9" fill="#f97316"/>` + HOW_T(150, 298, 12, "Download", {f: "#fff", w: 700, a: "middle"}) +
+    HOW_HL(150, 293, 100, 26) +
+    `<rect x="26" y="332" width="248" height="34" rx="10" fill="none" stroke="#1b806e" stroke-width="2"/>` + HOW_T(150, 354, 12, "View Order History", {f: "#1b806e", w: 700, a: "middle"}));
+  if(n === 2){
+    let tiles = "";
+    const cols = ["#6b7280", "#4b5563", "#7c8591", "#5b6470", "#6b7280", "#4b5563", "#7c8591", "#5b6470", "#6b7280", "#4b5563", "#7c8591"];
+    for(let i = 0, k = 0; i < 12; i++){
+      const r = Math.floor(i / 4), c = i % 4, x = 22 + c * 66, y = 124 + r * 70;
+      if(i === 8) tiles += `<rect x="${x}" y="${y}" width="56" height="56" rx="14" fill="#fff"/>` + HOW_T(x + 28, y + 36, 22, "VN", {w: 800, a: "middle"});
+      else tiles += `<rect x="${x}" y="${y}" width="56" height="56" rx="14" fill="${cols[k++ % cols.length]}" opacity=".7"/>`;
+    }
+    return HOW_SVG(`<rect x="6" y="6" width="288" height="388" rx="26" fill="#2b2f36"/><rect x="22" y="24" width="256" height="82" rx="16" fill="#1f4b7a"/>` +
+      HOW_T(38, 50, 12, "Today", {f: "#cfe3f7"}) + HOW_T(38, 88, 30, "31°", {f: "#fff"}) + tiles +
+      `<path d="M214 186 C214 250 150 280 98 292" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="6 5"/><polygon points="80,294 98,284 100,302" fill="#fff"/>` +
+      `<rect x="146" y="152" width="132" height="28" rx="14" fill="#000" opacity=".8"/>` + HOW_T(212, 171, 12, "Open this VN app", {f: "#fff", w: 700, a: "middle"}) +
+      `<rect x="22" y="338" width="256" height="46" rx="18" fill="#3c424b"/>`);
+  }
+  if(n === 3){
+    let tiles = "";
+    for(let i = 0; i < 5; i++) tiles += `<rect x="${22 + i * 52}" y="168" width="46" height="46" rx="10" fill="#f1f5f9"/>`;
+    return HOW_SVG(
+      `<line x1="30" y1="38" x2="50" y2="58" stroke="#111" stroke-width="3.5"/><line x1="50" y1="38" x2="30" y2="58" stroke="#111" stroke-width="3.5"/>` + HOW_HL(40, 48, 24, 24) +
+      HOW_T(26, 96, 14, "Create", {w: 700}) + HOW_T(100, 96, 14, "AI Market", {f: "#94a3b8"}) + HOW_T(190, 96, 14, "Library", {f: "#94a3b8"}) +
+      `<rect x="26" y="102" width="46" height="3" fill="#111"/>` +
+      `<rect x="22" y="114" width="256" height="44" rx="10" fill="#7c3aed"/>` + HOW_T(36, 142, 13, "Master the Features", {f: "#fbbf24", w: 700}) + tiles +
+      `<rect x="22" y="228" width="256" height="84" rx="14" fill="#3b82f6"/>` + HOW_T(150, 276, 15, "New Project", {f: "#fff", w: 700, a: "middle"}) +
+      `<rect x="22" y="312" width="256" height="26" rx="0" fill="#fffbeb"/>` + HOW_T(34, 329, 9, "Upgrade to unlock unlimited projects", {f: "#92400e"}) +
+      `<rect x="22" y="348" width="256" height="40" rx="12" fill="#f1f5f9"/>` + HOW_T(36, 373, 12, "Tutorial", {w: 700}));
+  }
+  if(n === 4){
+    let cards = "";
+    for(let i = 0; i < 3; i++) cards += `<rect x="22" y="${90 + i * 96}" width="256" height="84" rx="14" fill="#f8fafc" stroke="#e5e7eb"/><rect x="34" y="${102 + i * 96}" width="48" height="60" rx="8" fill="#cbd5e1"/><rect x="96" y="${110 + i * 96}" width="110" height="10" rx="5" fill="#cbd5e1"/><rect x="96" y="${132 + i * 96}" width="70" height="8" rx="4" fill="#e2e8f0"/>`;
+    return HOW_SVG(HOW_T(26, 58, 18, "Your Projects", {w: 800}) +
+      `<path d="M240 40 v-6 h6 M262 34 h6 v6 M268 56 v6 h-6 M246 62 h-6 v-6" fill="none" stroke="#111" stroke-width="3"/><rect x="248" y="44" width="12" height="12" rx="2" fill="none" stroke="#111" stroke-width="2.5"/>` +
+      HOW_HL(254, 49, 28, 28) + HOW_T(254, 86, 11, "Scan", {a: "middle", w: 700}) + cards);
+  }
+  if(n === 5) return HOW_SVG(
+    `<rect x="6" y="6" width="288" height="388" rx="26" fill="#0b1020"/>` +
+    `<defs><linearGradient id="gB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b84b8"/><stop offset=".55" stop-color="#e8b27a"/><stop offset="1" stop-color="#1f2a44"/></linearGradient></defs>` +
+    `<rect x="6" y="6" width="288" height="320" rx="26" fill="url(#gB)"/>` +
+    `<polyline points="28,34 20,42 28,50" fill="none" stroke="#fff" stroke-width="3"/>` + HOW_T(274, 46, 13, "TEMPLATE", {f: "#fff", w: 800, a: "end"}) +
+    `<circle cx="258" cy="210" r="18" fill="#fff"/>` + HOW_T(258, 215, 11, "VN", {w: 800, a: "middle"}) +
+    `<polygon points="258,244 262,254 273,254 264,260 268,271 258,264 248,271 252,260 243,254 254,254" fill="#fff"/>` +
+    HOW_T(28, 290, 12, "@yourstore", {f: "#fff"}) + HOW_T(28, 308, 11, "Preview", {f: "#e5e7eb"}) +
+    `<rect x="26" y="332" width="40" height="6" rx="3" fill="#475569"/>` +
+    HOW_T(26, 360, 10, "0:12 Duration", {f: "#cbd5e1"}) + HOW_T(104, 360, 10, "2 Usage", {f: "#cbd5e1"}) +
+    `<rect x="170" y="338" width="106" height="38" rx="10" fill="#f43f5e"/>` + HOW_T(223, 363, 15, "Use", {f: "#fff", w: 700, a: "middle"}) + HOW_HL(223, 357, 62, 28));
+  return HOW_SVG(
+    `<rect x="6" y="6" width="288" height="388" rx="26" fill="#14161b"/>` +
+    `<line x1="26" y1="30" x2="42" y2="46" stroke="#fff" stroke-width="3"/><line x1="42" y1="30" x2="26" y2="46" stroke="#fff" stroke-width="3"/>` +
+    `<defs><linearGradient id="gC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b84b8"/><stop offset="1" stop-color="#e8b27a"/></linearGradient></defs>` +
+    `<rect x="100" y="14" width="100" height="150" rx="2" fill="url(#gC)"/>` +
+    HOW_T(26, 196, 11, "Export Setting  1080p", {f: "#e5e7eb"}) + `<rect x="190" y="182" width="84" height="20" rx="6" fill="#2a2d35"/>` +
+    HOW_T(26, 226, 11, "Export Audio Only", {f: "#e5e7eb"}) + `<rect x="232" y="214" width="42" height="20" rx="10" fill="#2a2d35"/><circle cx="244" cy="224" r="8" fill="#fff"/>` +
+    HOW_T(26, 256, 11, "Resolution", {f: "#e5e7eb"}) + `<rect x="26" y="266" width="248" height="3" rx="2" fill="#3b82f6" opacity=".35"/><rect x="26" y="266" width="120" height="3" rx="2" fill="#3b82f6"/><circle cx="146" cy="267" r="8" fill="#fff"/>` +
+    HOW_T(26, 300, 11, "Estimated File Size  35 MB", {f: "#e5e7eb"}) +
+    `<rect x="26" y="322" width="248" height="46" rx="12" fill="#1d4ed8"/>` + HOW_T(150, 351, 16, "Export", {f: "#fff", w: 700, a: "middle"}) + HOW_HL(150, 345, 130, 34));
+}
+const HOW_ICON = {
+  1: '<path d="M12 3v12m0 0l-4-4m4 4l4-4M4 20h16"/>',
+  2: '<rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/>',
+  3: '<path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>',
+  4: '<path d="M4 8V5a1 1 0 011-1h3M16 4h3a1 1 0 011 1v3M20 16v3a1 1 0 01-1 1h-3M8 20H5a1 1 0 01-1-1v-3"/><rect x="8" y="8" width="8" height="8" rx="1"/>',
+  5: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/>',
+  6: '<path d="M12 16V4m0 0l-4 4m4-4l4 4M4 20h16"/>'
+};
+const HOW_STEPS = [
+  {c: "#1b806e", t: "Download Template", d: "After payment, open Order History and tap the Download button next to your template. It stays in your account for life."},
+  {c: "#e8735a", t: "Open VN Video Editor", d: "Open the VN Video Editor app on your phone. Install it free from the Play Store or App Store if you don't have it."},
+  {c: "#f59e0b", t: "Open Your Projects", d: "Tap the ✕ at the top-left of the screen to reach the Your Projects page."},
+  {c: "#0ea5e9", t: "Scan Template", d: "Tap the Scan icon at the top-right, then scan your template QR code or pick the downloaded template file."},
+  {c: "#1b806e", t: "Replace Clips", d: "Tap Use, then swap the demo clips with your own photos or videos. The effects and music stay exactly the same."},
+  {c: "#e8735a", t: "Export Video", d: "Tap Export and your reel is ready to save and post on Instagram, WhatsApp or YouTube."}
+];
+function renderHow(){
+  $("howBody").innerHTML = `
+    <div class="qgwrap"><span class="qg">Quick Guide</span></div>
+    <h1 class="howh">How to Use VN CODE 01 Templates</h1>
+    <p class="howsub">Make your reel in about <b>5 minutes</b>, right from your phone.</p>
+    ${HOW_STEPS.map((s, i) => `
+      <div class="hstep">
+        <div class="hleft"><div class="htile" style="background:${s.c}"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${HOW_ICON[i + 1]}</svg><span class="hnum">${i + 1}</span></div></div>
+        <div class="hright"><h3>${s.t}</h3><p>${s.d}</p><div class="hill">${howIllus(i + 1)}</div></div>
+      </div>`).join("")}
+    <div class="hcta"><h2>Ready to create stunning reels?</h2><p>Pick a template and have your reel ready in minutes.</p>
+      <button class="add big" onclick="closeHow()">Browse Templates →</button>
+      <p class="hhelp">Need help? <a onclick="alert('Add your WhatsApp / Email here')">Contact our support team</a></p></div>`;
+}
+function openHow(){
+  document.querySelectorAll("video").forEach(v => v.pause());
+  if(!$("howBody").innerHTML) renderHow();
+  $("howPage").classList.remove("hidden"); $("howPage").scrollTop = 0;
+}
+function closeHow(){
+  const p = $("howPage"); if(!p || p.classList.contains("hidden")) return;
+  p.classList.add("hidden");
+  try{ if(location.hash === "#how") history.replaceState(null, "", location.pathname + location.search); }catch(e){}
+}
+
+
+/* ---------- Payment (TEST MODE) + Payment Successful page ---------- */
+// Live payment (Razorpay + server) જોડાય ત્યારે PAY_LIVE true થશે. અત્યારે ફક્ત નમૂનો (Test) ચાલે છે.
+const PAY_LIVE = false;
+function fmtDate(iso){
+  const d = new Date(iso); if(isNaN(d)) return String(iso || "");
+  return d.toLocaleDateString("en-GB", {day: "numeric", month: "short", year: "numeric"}) + " at " +
+         d.toLocaleTimeString("en-US", {hour: "numeric", minute: "2-digit"}).toLowerCase();
+}
+function newOrderId(){
+  const c = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789"; let r = "";
+  for(let i = 0; i < 12; i++) r += c.charAt(Math.floor(Math.random() * c.length));
+  return r;
+}
+function saveOrders(list){ try{ localStorage.setItem(vnKey("vn_orders_"), JSON.stringify(list)); }catch(e){} }
+function qrFileName(it){ return "VN-CODE-01-" + String(it.name).replace(/[^a-z0-9]+/gi, "-") + "-QR.svg"; }
+// Test QR (સ્કેન થાય એવો નથી). Live માં અહીં Server તરફથી તમારો અસલી QR આવશે.
+function qrFor(it){
+  const t = byId(it.id);
+  if(t && t.qr) return t.qr;             // અસલી VN QR (ફાઇલ)
+  let seed = Number(it.id) * 7919, dots = "";
+  const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+  for(let y = 0; y < 21; y++) for(let x = 0; x < 21; x++){
+    const inFinder = (x < 7 && y < 7) || (x > 13 && y < 7) || (x < 7 && y > 13);
+    if(!inFinder && rnd() > 0.5) dots += `<rect x="${30 + x * 11}" y="${50 + y * 11}" width="10" height="10" fill="#111"/>`;
+  }
+  const finder = (x, y) => `<rect x="${30 + x * 11}" y="${50 + y * 11}" width="77" height="77" fill="#111"/><rect x="${30 + x * 11 + 11}" y="${50 + y * 11 + 11}" width="55" height="55" fill="#fff"/><rect x="${30 + x * 11 + 22}" y="${50 + y * 11 + 22}" width="33" height="33" fill="#111"/>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 340"><rect width="300" height="340" rx="18" fill="#fff" stroke="#e5e7eb" stroke-width="3"/><text x="150" y="32" font-size="15" font-family="Arial" font-weight="700" text-anchor="middle" fill="#0f172a">${String(it.name).replace(/&/g, "&amp;").replace(/</g, "&lt;").slice(0, 30)}</text>${dots}${finder(0, 0)}${finder(14, 0)}${finder(0, 14)}<text x="150" y="312" font-size="13" font-family="Arial" text-anchor="middle" fill="#ef4444" font-weight="700">TEST QR · NOT REAL</text></svg>`;
+  return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+}
+let payTotals = null;
+function openPay(){
+  const t = calc();
+  payTotals = {n: t.n, free: t.free, subtotal: t.n * PRICE, discount: t.free * PRICE, total: t.total, couponType: couponOn ? "b2g1" : (freeCode ? "free" : "")};
+  $("payAmt").textContent = "₹ " + t.total.toFixed(2) + " · " + t.n + " template" + (t.n === 1 ? "" : "s");
+  $("payModal").classList.remove("hidden");
+}
+function closePay(){ $("payModal").classList.add("hidden"); }
+function completePay(ok){
+  if(!payTotals || !cart.length){ closePay(); return; }
+  const order = {
+    id: newOrderId(), date: new Date().toISOString(), status: ok ? "Paid" : "Failed", test: true,
+    amount: payTotals.total, subtotal: payTotals.subtotal, discount: payTotals.discount, couponType: payTotals.couponType,
+    items: cart.map(id => ({id: id, name: byId(id).name}))
+  };
+  const list = vnOrders(); list.unshift(order); saveOrders(list);
+  closePay();
+  if(ok){
+    cart = []; couponOn = false; freeCode = ""; persist(); updateBadges(); syncCards();
+    closeCart(); showPaid(order);
+    sendOrderEmail(order).then(okMail => {
+      const m = $("mailnote");
+      if(okMail && m) m.textContent = "📧 A confirmation email was sent to " + window.vnUser.email;
+    });
+  } else {
+    toast("Payment failed. You can try again.");
+  }
+}
+function retryOrder(i){
+  const o = vnOrders()[i]; if(!o) return;
+  o.items.forEach(it => { if(!cart.includes(it.id) && byId(it.id)) cart.push(it.id); });
+  persist(); updateBadges(); syncCards(); closeAccount(); openCart();
+}
+function showPaid(o){
+  const qrs = o.items.map(it => `<div class="qrbox"><img src="${qrFor(it)}" alt="QR"><div class="qrn">${esc(it.name)}</div>
+      <a class="qrbtn" href="${qrFor(it)}" download="${qrFileName(it)}">⬇ Download QR Code</a></div>`).join("");
+  $("paidBody").innerHTML = `
+    <div class="okcircle"><div class="okin">✓</div><span class="spark">✦</span></div>
+    <h1 class="okh">Payment Successful!</h1>
+    <p class="oksub">Thank you for your purchase. Your templates are ready to use.</p>
+    <div class="rcard">
+      <div class="rtop"><div><small>Order ID</small><b>${esc(o.id)}</b></div><div style="text-align:right"><small>Date</small><b>${esc(new Date(o.date).toLocaleDateString("en-GB", {day: "numeric", month: "long", year: "numeric"}))}</b></div></div>
+      <div class="rsum"><h3>Order Summary</h3>
+        <div class="rrow"><span>Subtotal</span><b>₹ ${o.subtotal}</b></div>
+        ${o.discount ? `<div class="rrow g"><span>Discount (${o.couponType === "free" ? "Free template coupon" : "B2G1"})</span><b>− ₹ ${o.discount}</b></div>` : ""}
+        <div class="rrow tot"><span>Total</span><b>₹ ${o.amount}</b></div></div>
+      <div class="rqr"><h3>▦ Your Template QR Code</h3>${qrs}
+        <p class="qrnote">Save the QR image to your Photos, then open VN Video Editor and scan it to get your template.</p></div>
+    </div>
+    <p id="mailnote" class="mailnote"></p>
+    ${(o.test && o.items.some(it => { const t = byId(it.id); return !(t && t.qr); })) ? '<p class="testnote">TEST MODE: no real payment was made and this QR is only a sample.</p>' : ""}
+    <button class="hbtn out" onclick="closePaid();openAccount('orders')">🕘 View Order History</button>
+    <button class="hbtn solid" onclick="closePaid()">Browse More Templates →</button>
+    <p class="hhelp">Need help? <a onclick="alert('Add your WhatsApp / Email here')">Contact our support team</a></p>`;
+  $("paidPage").classList.remove("hidden"); $("paidPage").scrollTop = 0;
+}
+function closePaid(){ const p = $("paidPage"); if(p) p.classList.add("hidden"); }
+
+
+/* ---------- Big-screen video viewer (video alone, with Share + Save) ---------- */
+function openViewer(id){
+  const t = byId(id); if(!t) return;
+  if(!t.video){ openTemplate(id); return; }
+  document.querySelectorAll("video").forEach(v => v.pause());
+  const inCart = cart.includes(id), sv = saved.includes(id);
+  $("vvBody").innerHTML = `
+    <div class="vtop"><button class="vx" onclick="closeViewer()" aria-label="Close">✕</button><span>${esc(t.name)}</span></div>
+    <div class="vstage"><video id="vvVideo" controls playsinline autoplay ${t.poster ? `poster="${t.poster}"` : ""} src="${t.video}"></video></div>
+    <div class="vbar">
+      <button onclick="shareTpl(${id})">⤴ Share</button>
+      <button data-savebtn="${id}" onclick="toggleSave(${id})">${sv ? "♥ Saved" : "♡ Save"}</button>
+      <button onclick="closeViewer();openTemplate(${id})">ⓘ Details</button>
+      <button class="add ${inCart ? "in" : ""}" data-add="${id}" onclick="${inCart ? "closeViewer();openCart()" : `addToCart(${id})`}">${inCart ? "✓ View Cart" : "🛒 ₹" + PRICE}</button>
+    </div>`;
+  $("vidView").classList.remove("hidden");
+  const v = $("vvVideo");
+  if(v && v.play){ const p = v.play(); if(p && p.catch) p.catch(() => {}); }
+}
+function closeViewer(){
+  const w = $("vidView"); if(!w || w.classList.contains("hidden")) return;
+  const v = $("vvVideo"); if(v && v.pause) v.pause();
+  w.classList.add("hidden"); $("vvBody").innerHTML = "";
+  try{ if(/^#[sv]=/.test(location.hash)) history.replaceState(null, "", location.pathname + location.search); }catch(e){}
+}
+
+
+/* ---------- Order confirmation email (EmailJS) + deep links ---------- */
+// EmailJS માં Account બનાવી આ ત્રણ કિંમત ભરો. ખાલી હોય ત્યાં સુધી Email જશે નહીં.
+const EMAILJS = {service: "service_e2bsl4x", template: "template_u7ae31m", key: "TqUWU1g2nJgqoGr_9"};   // key = EmailJS Public Key (Account → General)
+const SITE_URL = "https://vncode01.netlify.app";
+async function sendOrderEmail(o){
+  if(!EMAILJS.service || !EMAILJS.template || !EMAILJS.key || !window.vnUser) return false;
+  const p = vnGetProfile();
+  const itemsHtml = o.items.map(it =>
+    '<table width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;margin:0 0 12px"><tr><td style="padding:18px;text-align:center">' +
+    '<div style="font-size:18px;font-weight:700;color:#0f172a;margin-bottom:14px">' + esc(it.name) + '</div>' +
+    '<a href="' + SITE_URL + '/#orders" style="display:inline-block;background:#16a34a;color:#ffffff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:10px">📥 Download QR Code</a>' +
+    '</td></tr></table>').join("");
+  try{
+    const r = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({service_id: EMAILJS.service, template_id: EMAILJS.template, user_id: EMAILJS.key, template_params: {
+        to_email: window.vnUser.email,
+        customer_name: p.first || "there",
+        order_id: o.id,
+        order_date: new Date(o.date).toLocaleString("en-GB", {day: "2-digit", month: "2-digit", year: "numeric", hour: "numeric", minute: "2-digit", hour12: true}),
+        total_templates: String(o.items.length),
+        total_amount: "₹" + o.amount,
+        templates_html: itemsHtml,
+        orders_link: SITE_URL + "/#orders",
+        guide_link: SITE_URL + "/#how",
+        test_banner: o.test ? '<div style="background:#fee2e2;color:#b91c1c;font-weight:700;text-align:center;padding:10px;border-radius:8px;margin-bottom:16px">TEST ORDER - no real payment was made</div>' : ""
+      }})
+    });
+    return r.ok;
+  }catch(e){ return false; }
+}
+// Email ની લિંક (#orders / #how) થી Website ખુલે ત્યારે
+window.pendingOrders = false;
+function handleHash(){
+  const hsh = location.hash;
+  if(hsh === "#how"){ openHow(); }
+  else if(/^#s=[a-z2-7]{26}$/.test(hsh)){ openShare(hsh.slice(3)); }
+  else if(/^#v=[a-z2-7]{26}$/.test(hsh)){ openPublicVideo(hsh.slice(3)); }
+  else if(hsh === "#admin"){ if(isAdmin()) openAdmin(); }
+  else if(hsh.indexOf("#orders") === 0){
+    if(window.vnUser) openAccount("orders");
+    else { window.pendingOrders = true; openAuth("login"); }
+  }
+}
+function afterLoginHook(){
+  if(window.pendingCoupon){ const c = window.pendingCoupon; window.pendingCoupon = null; openCart(); $("couponInput").value = c; applyCoupon(); return true; }
+  if(window.pendingShare){ const t = window.pendingShare; window.pendingShare = null; openShare(t); return true; }
+  if(window.pendingOrders){ window.pendingOrders = false; openAccount("orders"); return true; }
+  return false;
+}
+
+handleHash();
+window.addEventListener("hashchange", handleHash);
+/* ---------- Tiny QR code generator (byte mode, level M, versions 1-6) ---------- */
+const QR = (function(){
+  const EXP = new Array(512), LOG = new Array(256);
+  (function(){ let x = 1; for(let i = 0; i < 255; i++){ EXP[i] = x; LOG[x] = i; x <<= 1; if(x & 256) x ^= 0x11d; } for(let i = 255; i < 512; i++) EXP[i] = EXP[i - 255]; })();
+  const gmul = (a, b) => (a === 0 || b === 0) ? 0 : EXP[LOG[a] + LOG[b]];
+  function rsGen(n){ let g = [1]; for(let i = 0; i < n; i++){ const ng = new Array(g.length + 1).fill(0); for(let j = 0; j < g.length; j++){ ng[j] ^= g[j]; ng[j + 1] ^= gmul(g[j], EXP[i]); } g = ng; } return g; }
+  function rsEnc(data, n){
+    const g = rsGen(n), res = new Array(n).fill(0);
+    for(const d of data){ const f = d ^ res[0]; res.shift(); res.push(0); if(f) for(let i = 0; i < n; i++) res[i] ^= gmul(g[i + 1], f); }
+    return res;
+  }
+  const VER = {1: {ec: 10, blocks: 1, data: 16}, 2: {ec: 16, blocks: 1, data: 28}, 3: {ec: 26, blocks: 1, data: 44},
+               4: {ec: 18, blocks: 2, data: 32}, 5: {ec: 24, blocks: 2, data: 43}, 6: {ec: 16, blocks: 4, data: 27}};
+  const ALIGN = {2: 18, 3: 22, 4: 26, 5: 30, 6: 34};
+  const bit = (v, i) => ((v >>> i) & 1) === 1;
+
+  function build(text){
+    const bytes = Array.from(new TextEncoder().encode(text));
+    let ver = 0;
+    for(let v = 1; v <= 6; v++){ if(Math.ceil((12 + 8 * bytes.length) / 8) <= VER[v].blocks * VER[v].data){ ver = v; break; } }
+    if(!ver) throw new Error("Text too long for QR");
+    const V = VER[ver], cap = V.blocks * V.data, size = 17 + 4 * ver;
+    // data bits
+    const bits = [];
+    const put = (val, len) => { for(let i = len - 1; i >= 0; i--) bits.push((val >>> i) & 1); };
+    put(4, 4); put(bytes.length, 8); bytes.forEach(b => put(b, 8));
+    for(let i = 0; i < 4 && bits.length < cap * 8; i++) bits.push(0);
+    while(bits.length % 8) bits.push(0);
+    const data = [];
+    for(let i = 0; i < bits.length; i += 8){ let b = 0; for(let j = 0; j < 8; j++) b = (b << 1) | bits[i + j]; data.push(b); }
+    for(let pad = 0xEC; data.length < cap; pad ^= 0xEC ^ 0x11) data.push(pad);
+    // blocks + ecc + interleave
+    const blocks = [], eccs = [];
+    for(let b = 0; b < V.blocks; b++){ const d = data.slice(b * V.data, (b + 1) * V.data); blocks.push(d); eccs.push(rsEnc(d, V.ec)); }
+    const all = [];
+    for(let i = 0; i < V.data; i++) blocks.forEach(d => all.push(d[i]));
+    for(let i = 0; i < V.ec; i++) eccs.forEach(e => all.push(e[i]));
+    // matrix
+    const mod = Array.from({length: size}, () => new Array(size).fill(false));
+    const fn = Array.from({length: size}, () => new Array(size).fill(false));
+    const setF = (x, y, dark) => { mod[y][x] = dark; fn[y][x] = true; };
+    for(let i = 0; i < size; i++){ setF(6, i, i % 2 === 0); setF(i, 6, i % 2 === 0); }
+    const finder = (cx, cy) => { for(let dy = -4; dy <= 4; dy++) for(let dx = -4; dx <= 4; dx++){ const d = Math.max(Math.abs(dx), Math.abs(dy)), x = cx + dx, y = cy + dy; if(x >= 0 && x < size && y >= 0 && y < size) setF(x, y, d !== 2 && d !== 4); } };
+    finder(3, 3); finder(size - 4, 3); finder(3, size - 4);
+    if(ALIGN[ver]){ const c = ALIGN[ver]; for(let dy = -2; dy <= 2; dy++) for(let dx = -2; dx <= 2; dx++) setF(c + dx, c + dy, Math.max(Math.abs(dx), Math.abs(dy)) !== 1); }
+    const formatBits = (mask) => {
+      const d = (0 << 3) | mask; let rem = d;                 // level M = 0
+      for(let i = 0; i < 10; i++) rem = (rem << 1) ^ ((rem >>> 9) * 0x537);
+      return ((d << 10) | rem) ^ 0x5412;
+    };
+    const drawFormat = (mask) => {
+      const b = formatBits(mask);
+      for(let i = 0; i <= 5; i++) setF(8, i, bit(b, i));
+      setF(8, 7, bit(b, 6)); setF(8, 8, bit(b, 7)); setF(7, 8, bit(b, 8));
+      for(let i = 9; i < 15; i++) setF(14 - i, 8, bit(b, i));
+      for(let i = 0; i < 8; i++) setF(size - 1 - i, 8, bit(b, i));
+      for(let i = 8; i < 15; i++) setF(8, size - 15 + i, bit(b, i));
+      setF(8, size - 8, true);
+    };
+    drawFormat(0);
+    // place data
+    let k = 0;
+    for(let right = size - 1; right >= 1; right -= 2){
+      if(right === 6) right = 5;
+      for(let vert = 0; vert < size; vert++) for(let j = 0; j < 2; j++){
+        const x = right - j, up = ((right + 1) & 2) === 0, y = up ? size - 1 - vert : vert;
+        if(!fn[y][x] && k < all.length * 8){ mod[y][x] = bit(all[k >>> 3], 7 - (k & 7)); k++; }
+      }
+    }
+    const applyMask = (m) => {
+      for(let y = 0; y < size; y++) for(let x = 0; x < size; x++){
+        let inv;
+        switch(m){
+          case 0: inv = (x + y) % 2 === 0; break;
+          case 1: inv = y % 2 === 0; break;
+          case 2: inv = x % 3 === 0; break;
+          case 3: inv = (x + y) % 3 === 0; break;
+          case 4: inv = (Math.floor(x / 3) + Math.floor(y / 2)) % 2 === 0; break;
+          case 5: inv = (x * y) % 2 + (x * y) % 3 === 0; break;
+          case 6: inv = ((x * y) % 2 + (x * y) % 3) % 2 === 0; break;
+          default: inv = ((x + y) % 2 + (x * y) % 3) % 2 === 0;
+        }
+        if(!fn[y][x] && inv) mod[y][x] = !mod[y][x];
+      }
+    };
+    const penalty = () => {
+      let p = 0;
+      const line = (get) => {
+        for(let a = 0; a < size; a++){
+          let run = 1;
+          for(let b = 1; b < size; b++){ if(get(a, b) === get(a, b - 1)){ run++; if(run === 5) p += 3; else if(run > 5) p++; } else run = 1; }
+          const s = []; for(let b = 0; b < size; b++) s.push(get(a, b) ? 1 : 0);
+          for(let b = 0; b + 11 <= size; b++){
+            const w = s.slice(b, b + 11).join("");
+            if(w === "10111010000" || w === "00001011101") p += 40;
+          }
+        }
+      };
+      line((a, b) => mod[a][b]); line((a, b) => mod[b][a]);
+      for(let y = 0; y < size - 1; y++) for(let x = 0; x < size - 1; x++){ const c = mod[y][x]; if(c === mod[y][x + 1] && c === mod[y + 1][x] && c === mod[y + 1][x + 1]) p += 3; }
+      let dark = 0; for(const r of mod) for(const c of r) if(c) dark++;
+      const total = size * size; p += (Math.ceil(Math.abs(dark * 20 - total * 10) / total) - 1) * 10;
+      return p;
+    };
+    let best = 0, bestP = Infinity;
+    for(let m = 0; m < 8; m++){ applyMask(m); drawFormat(m); const p = penalty(); if(p < bestP){ best = m; bestP = p; } applyMask(m); }
+    applyMask(best); drawFormat(best);
+    return mod;
+  }
+  return {matrix: build};
+})();
+
+/* ---------- Private "one person only" video links (Firestore) ---------- */
+function isAdmin(){
+  const u = window.vnUser; if(!u) return false;
+  return (!!ADMIN_UID && u.uid === ADMIN_UID) || ADMIN_EMAILS.indexOf(String(u.email || "").toLowerCase()) >= 0;
+}
+
+async function vnToken(){
+  const u = window.vnUser; if(!u) return null;
+  if(u.idToken && u.tokenTime && Date.now() - u.tokenTime < 50 * 60 * 1000) return u.idToken;
+  if(!u.refreshToken) return u.idToken || null;
+  try{
+    const r = await fetch("https://securetoken.googleapis.com/v1/token?key=" + FB_KEY, {method: "POST",
+      headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: "grant_type=refresh_token&refresh_token=" + encodeURIComponent(u.refreshToken)});
+    const d = await r.json();
+    if(d.id_token){
+      u.idToken = d.id_token; u.refreshToken = d.refresh_token || u.refreshToken; u.tokenTime = Date.now();
+      try{ localStorage.setItem("vn_user", JSON.stringify(u)); }catch(e){}
+    }
+  }catch(e){}
+  return u.idToken;
+}
+async function fsFetch(path, opt){
+  const tok = await vnToken();
+  if(!tok) throw new Error("not logged in");
+  const o = Object.assign({}, opt || {}); o.headers = {"Authorization": "Bearer " + tok, "Content-Type": "application/json"};
+  const r = await fetch(FS_BASE + path, o);
+  let data = null; try{ data = await r.json(); }catch(e){}
+  return {status: r.status, ok: r.ok, data: data};
+}
+function newToken(){
+  const a = new Uint8Array(26); crypto.getRandomValues(a);
+  const al = "abcdefghijklmnopqrstuvwxyz234567"; let t = "";
+  for(let i = 0; i < a.length; i++) t += al[a[i] & 31];
+  return t;
+}
+function validVideoUrl(u){ return /^https:\/\/\S+$/i.test(u) || /^videos\/\S+$/.test(u); }
+function shareMedia(u){
+  let m = u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|embed\/))([\w-]{11})/);
+  if(m) return '<iframe src="https://www.youtube.com/embed/' + m[1] + '?rel=0&modestbranding=1&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+  m = u.match(/drive\.google\.com\/file\/d\/([\w-]+)/);
+  if(m) return '<iframe src="https://drive.google.com/file/d/' + m[1] + '/preview" allow="autoplay" allowfullscreen></iframe>';
+  return '<video controls controlsList="nodownload" playsinline autoplay src="' + esc(u) + '" oncontextmenu="return false"></video>';
+}
+function showShareMsg(msg, bad){
+  $("vvBody").innerHTML = '<div class="vtop"><button class="vx" onclick="closeViewer()" aria-label="Close">✕</button><span>Private video</span></div><div class="vmsg ' + (bad ? "bad" : "") + '">' + esc(msg) + '</div>';
+  $("vidView").classList.remove("hidden");
+}
+function playShare(title, url, label){
+  if(!validVideoUrl(url)){ showShareMsg("This video link is not valid.", true); return; }
+  $("vvBody").innerHTML = '<div class="vtop"><button class="vx" onclick="closeViewer()" aria-label="Close">✕</button><span>' + esc(title) + '</span></div>' +
+    '<div class="vstage">' + shareMedia(url) + '</div><div class="vbar"><span class="vlock">' + (label || "🔒 Private video · linked to your account") + '</span></div>';
+  $("vidView").classList.remove("hidden");
+}
+async function fetchPublicShare(token){
+  try{
+    const r = await fetch(FS_BASE + "/shares/" + token + "?key=" + FB_KEY);
+    if(!r.ok) return null;
+    const d = await r.json(), f = d.fields || {};
+    return (f.mode && f.mode.stringValue === "public") ? f : null;
+  }catch(e){ return null; }
+}
+function openPublicVideo(id){
+  closeViewer();
+  if(!CLOUDINARY.cloud){ showShareMsg("This video link is not ready yet. Please ask the sender.", true); return; }
+  playShare("Video", "https://res.cloudinary.com/" + CLOUDINARY.cloud + "/video/upload/q_auto,f_mp4/" + id + ".mp4", "▶ Shared with you via VN CODE 01");
+}
+async function openShare(token){
+  const pub = await fetchPublicShare(token);
+  if(pub){ closeViewer(); playShare(pub.title ? pub.title.stringValue : "Video", pub.videoUrl ? pub.videoUrl.stringValue : "", "▶ Shared with you via VN CODE 01"); return; }
+  if(!window.vnUser){
+    window.pendingShare = token; openAuth("register");
+    const e = $("authErr"); e.classList.add("ok"); e.textContent = "Please log in or register to open this private video.";
+    return;
+  }
+  closeViewer(); showShareMsg("Opening your private video…");
+  try{
+    const r = await fsFetch("/shares/" + token);
+    if(r.status === 404){ showShareMsg("This link is not valid or was removed.", true); return; }
+    if(r.status === 403){ showShareMsg("This private link has already been used by someone else.", true); return; }
+    if(!r.ok){ showShareMsg("Could not open this link. Please try again.", true); return; }
+    const f = (r.data && r.data.fields) || {};
+    const claimed = f.claimedBy && f.claimedBy.stringValue;
+    if(!claimed && !isAdmin()){
+      const c = await fsFetch("/shares/" + token + "?updateMask.fieldPaths=claimedBy&updateMask.fieldPaths=claimedAt&currentDocument.exists=true",
+        {method: "PATCH", body: JSON.stringify({fields: {claimedBy: {stringValue: window.vnUser.uid}, claimedAt: {integerValue: String(Date.now())}}})});
+      if(!c.ok){ showShareMsg("This private link has already been used by someone else.", true); return; }
+    } else if(claimed && claimed !== window.vnUser.uid && !isAdmin()){
+      showShareMsg("This private link has already been used by someone else.", true); return;
+    }
+    playShare(f.title ? f.title.stringValue : "Private video", f.videoUrl ? f.videoUrl.stringValue : "");
+  }catch(e){ showShareMsg("Network error. Please check your internet and try again.", true); }
+}
+
+/* ---- Admin page: create / list / delete private links, with QR ---- */
+function qrCanvas(text, px){
+  const m = QR.matrix(text), n = m.length, q = 4, cell = Math.max(2, Math.floor(px / (n + 2 * q)));
+  const c = document.createElement("canvas"); c.width = c.height = cell * (n + 2 * q);
+  const g = c.getContext("2d"); g.fillStyle = "#fff"; g.fillRect(0, 0, c.width, c.height); g.fillStyle = "#000";
+  for(let y = 0; y < n; y++) for(let x = 0; x < n; x++) if(m[y][x]) g.fillRect((x + q) * cell, (y + q) * cell, cell, cell);
+  return c;
+}
+function rrPath(g, x, y, w, h, r){
+  g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r);
+  g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath();
+}
+// તમારા નમૂના જેવો: જાડી ગોળ કાળી ફ્રેમ + સફેદ અંદર + QR
+function qrStampCanvas(text, px){
+  const m = QR.matrix(text), n = m.length, qz = 4;
+  const cell = Math.max(2, Math.floor(px / (n + 2 * qz + 8)));
+  const fr = Math.round(cell * 2.5), inner = (n + 2 * qz) * cell, box = inner + 2 * fr, mg = Math.round(cell * 1.5), W = box + 2 * mg;
+  const c = document.createElement("canvas"); c.width = c.height = W;
+  const g = c.getContext("2d");
+  g.fillStyle = "#fff"; g.fillRect(0, 0, W, W);
+  const r = Math.round(box * 0.12);
+  g.fillStyle = "#000"; rrPath(g, mg, mg, box, box, r); g.fill();
+  g.fillStyle = "#fff"; rrPath(g, mg + fr, mg + fr, inner, inner, Math.max(r - fr, 6)); g.fill();
+  g.fillStyle = "#000";
+  for(let y = 0; y < n; y++) for(let x = 0; x < n; x++) if(m[y][x]) g.fillRect(mg + fr + (qz + x) * cell, mg + fr + (qz + y) * cell, cell, cell);
+  return c;
+}
+function openAdmin(){
+  $("userMenu").classList.add("hidden");
+  if(!isAdmin()){ toast("Admin only"); return; }
+  closeViewer(); closeTemplate(); closeHow(); closePaid(); closeAccount();
+  $("adminPage").classList.remove("hidden"); $("adminPage").scrollTop = 0;
+  $("admBody").innerHTML = `<h1>Video QR Generator</h1>
+    <p class="admsub">Upload a video and get its own QR code. Share the QR on WhatsApp. When someone scans it with Google Lens, the link appears; tapping it opens the video.</p>
+    <div class="pcard"><label>Title</label><input id="admTitle" placeholder="e.g. Birthday video for Riya">
+      <label>Video file</label><input id="admFile" type="file" accept="video/*">
+      <div class="orline">or paste a video link</div>
+      <input id="admUrl" placeholder="YouTube (unlisted), Google Drive, or .mp4 link">
+      <label>Who can watch?</label>
+      <label class="rad"><input type="radio" name="admMode" value="one" checked> Only one person (the first to scan)</label>
+      <label class="rad"><input type="radio" name="admMode" value="any"> Anyone who scans the QR</label>
+      <div id="admProg" class="prog hidden"><i id="admBar"></i></div>
+      <div id="admErr" class="autherr" style="margin-top:14px"></div>
+      <button id="admGo" class="authgo" onclick="createVideoQr()">Upload &amp; create QR</button></div>
+    <div id="admResult"></div>
+    <h3 class="admh">Recent QR codes (this phone)</h3><div id="admHist" class="admlist"></div>
+    <h3 class="admh">One-person links</h3><div id="admList" class="admlist">Loading…</div>
+    <h3 class="admh">Store templates</h3>
+    <p class="admsub">Add, hide or delete templates here. Changes show on the store straight away. Upload needs Cloudinary; a video or QR can also be pasted as a link.</p>
+    <div class="pcard"><label>Template name</label><input id="tplName" placeholder="e.g. Happy Birthday">
+      <label>Category</label><select id="tplCat" class="tplsel"></select>
+      <label>Video file</label><input id="tplVideoFile" type="file" accept="video/*">
+      <div class="orline">or paste a video link</div>
+      <input id="tplVideoUrl" placeholder="https://… (mp4 link, YouTube or Drive)">
+      <label>QR image (optional)</label><input id="tplQrFile" type="file" accept="image/*">
+      <div class="orline">or paste a QR image link</div>
+      <input id="tplQrUrl" placeholder="https://… (image link)">
+      <div id="tplErr" class="autherr" style="margin-top:14px"></div>
+      <button id="tplGo" class="authgo" onclick="createTemplate()">Add template</button>
+      <button class="cnbtn" onclick="importStarter()">Import starter templates (one time)</button></div>
+    <div id="tplAdmList" class="admlist">Loading…</div>
+    <h3 class="admh">Free template codes</h3>
+    <p class="admsub">Each code makes <b>any one template free</b> in the cart. The codes are secret: only you can see this list. Anyone you give a code to can use it as many times as they like. You can disable or delete a code at any time.</p>
+    <div class="pcard"><label>Note (only you can see it)</label><input id="cpNote" placeholder="e.g. Instagram giveaway">
+      <div id="cpErr" class="autherr" style="margin-top:14px"></div>
+      <button class="authgo" onclick="createCoupon()">Create free code</button></div>
+    <div id="cpResult"></div><div id="cpList" class="admlist">Loading…</div>`;
+  renderHist(); renderTplAdmin(); loadShares(); loadCoupons();
+}
+function closeAdmin(){ const p = $("adminPage"); if(p) p.classList.add("hidden"); }
+function uploadVideo(file, publicId, onProgress){
+  return new Promise((resolve, reject) => {
+    const fd = new FormData(); fd.append("file", file); fd.append("upload_preset", CLOUDINARY.preset); fd.append("public_id", publicId);
+    const x = new XMLHttpRequest();
+    x.open("POST", "https://api.cloudinary.com/v1_1/" + CLOUDINARY.cloud + "/video/upload");
+    x.upload.onprogress = e => { if(e.lengthComputable) onProgress(e.loaded / e.total); };
+    x.onload = () => {
+      let d = {}; try{ d = JSON.parse(x.responseText); }catch(e){}
+      if(x.status < 300 && d.secure_url) resolve(d);
+      else reject(new Error((d.error && d.error.message) ? "Upload failed: " + d.error.message : "Upload failed (error " + x.status + ")."));
+    };
+    x.onerror = () => reject(new Error("Network error while uploading. Please try again."));
+    x.send(fd);
+  });
+}
+function shareLink(token){ return SITE_URL + "/#s=" + token; }
+function getHist(){ try{ return JSON.parse(localStorage.getItem("vn_qr_hist")) || []; }catch(e){ return []; } }
+function saveHist(list){ try{ localStorage.setItem("vn_qr_hist", JSON.stringify(list.slice(0, 30))); }catch(e){} }
+function renderHist(){
+  const box = $("admHist"); if(!box) return;
+  const list = getHist();
+  if(!list.length){ box.textContent = "Nothing yet."; return; }
+  box.innerHTML = list.map((h, i) => '<div class="admrow"><div><b>' + esc(h.title) + '</b><span class="' + (h.mode === "any" ? "free" : "used") + '">' + (h.mode === "any" ? "Anyone" : "One person") + '</span></div>' +
+    '<div class="admbtns"><button onclick="showHist(' + i + ')">QR</button><button onclick="copyLink(getHist()[' + i + '].link)">Copy</button><button class="del" onclick="delHist(' + i + ')">Remove</button></div></div>').join("");
+}
+function showHist(i){ const h = getHist()[i]; if(h) showQrResult(h.title, h.link, h.mode); }
+function delHist(i){ const l = getHist(); l.splice(i, 1); saveHist(l); renderHist(); }
+async function createVideoQr(){
+  const err = $("admErr"), go = $("admGo"), prog = $("admProg"), bar = $("admBar");
+  err.classList.remove("ok"); err.textContent = "";
+  const title = $("admTitle").value.trim(), url = $("admUrl").value.trim();
+  const fileEl = $("admFile"), file = fileEl.files && fileEl.files[0];
+  const modeEl = document.querySelector('input[name="admMode"]:checked'), mode = modeEl ? modeEl.value : "one";
+  if(!title){ err.textContent = "Please enter a title."; return; }
+  if(!file && !validVideoUrl(url)){ err.textContent = "Choose a video file, or paste a valid https:// video link."; return; }
+  go.disabled = true;
+  try{
+    let videoUrl = url, publicId = null;
+    if(file){
+      if(!CLOUDINARY.cloud || !CLOUDINARY.preset) throw new Error("Video upload is not set up yet (Cloudinary). Paste a video link instead.");
+      if(file.size > 100 * 1024 * 1024) throw new Error("This video is larger than 100 MB. Please compress it or paste a link.");
+      publicId = newToken(); prog.classList.remove("hidden"); bar.style.width = "0%";
+      const d = await uploadVideo(file, publicId, p => { bar.style.width = Math.round(p * 100) + "%"; });
+      videoUrl = d.secure_url; publicId = d.public_id || publicId;
+    }
+    let link;
+    if(mode === "any" && file && publicId && publicId.indexOf("/") < 0){
+      link = SITE_URL + "/#v=" + publicId;                       // કોઈ Database વગર
+    } else {
+      const token = newToken();
+      const r = await fsFetch("/shares?documentId=" + token, {method: "POST", body: JSON.stringify({fields: {
+        title: {stringValue: title}, videoUrl: {stringValue: videoUrl}, createdBy: {stringValue: window.vnUser.uid},
+        mode: {stringValue: mode === "any" ? "public" : "one"},
+        createdAt: {integerValue: String(Date.now())}, claimedBy: {nullValue: null}, claimedAt: {nullValue: null}}})});
+      if(!r.ok) throw new Error(r.status === 403 ? "Permission denied. Check the Firestore rules and the Admin UID." : "Could not save the link (error " + r.status + ").");
+      link = shareLink(token);
+    }
+    const h = getHist(); h.unshift({title: title, link: link, mode: mode, ts: Date.now()}); saveHist(h);
+    $("admTitle").value = ""; $("admUrl").value = ""; fileEl.value = "";
+    showQrResult(title, link, mode); renderHist(); loadShares();
+  }catch(e){ err.textContent = e.message || "Something went wrong. Please try again."; }
+  go.disabled = false; prog.classList.add("hidden");
+}
+let curQr = null;
+function showQrResult(title, link, mode){
+  curQr = {title: title, link: link};
+  $("admResult").innerHTML = '<div class="pcard admres"><b>' + esc(title || "Video") + '</b><span class="modetag">' + (mode === "any" ? "Anyone who scans" : "Only one person") + '</span>' +
+    '<div id="admQr" class="admqr"></div>' +
+    '<div class="prow"><button class="cn" onclick="copyLink(curQr.link)">Copy link</button><button class="sv" onclick="downloadCurQr()">Download QR</button></div>' +
+    '<button class="hbtn wa" onclick="waCurQr()">Share on WhatsApp</button>' +
+    '<p class="admsub" style="margin:12px 0 0;font-size:15px">Scan the QR with Google Lens to open the video.</p></div>';
+  $("admQr").appendChild(qrStampCanvas(link, 360));
+  $("admResult").scrollIntoView && $("admResult").scrollIntoView({behavior: "smooth"});
+}
+function showShareQr(token, title){ showQrResult(title, shareLink(token), "one"); }
+async function copyLink(link){
+  try{ await navigator.clipboard.writeText(link); toast("Link copied"); }catch(e){ window.prompt("Copy this link:", link); }
+}
+function copyShare(token){ copyLink(shareLink(token)); }
+function downloadCurQr(){
+  if(!curQr) return;
+  const c = qrStampCanvas(curQr.link, 900);
+  c.toBlob(b => { const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = "video-qr-" + String(curQr.link).slice(-6) + ".png"; document.body.appendChild(a); a.click(); a.remove(); });
+}
+async function waCurQr(){
+  if(!curQr) return;
+  const text = "▶ Scan this QR with Google Lens to watch the video:\n" + curQr.link;
+  try{
+    const c = qrStampCanvas(curQr.link, 800);
+    const blob = await new Promise(res => c.toBlob(res, "image/png"));
+    const file = new File([blob], "video-qr.png", {type: "image/png"});
+    if(navigator.canShare && navigator.canShare({files: [file]})){ await navigator.share({files: [file], text: text}); return; }
+  }catch(e){ if(e && e.name === "AbortError") return; }
+  window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank");
+}
+async function loadShares(){
+  const box = $("admList"); if(!box) return;
+  try{
+    const r = await fsFetch("/shares?pageSize=100&orderBy=" + encodeURIComponent("createdAt desc"));
+    if(!r.ok){ box.textContent = r.status === 403 ? "Permission denied. Check the Firestore rules and the Admin UID." : "Could not load links (error " + r.status + ")."; return; }
+    const docs = (r.data && r.data.documents) || [];
+    if(!docs.length){ box.textContent = "No one-person links yet."; return; }
+    box.innerHTML = docs.map(d => {
+      const f = d.fields || {}, token = d.name.split("/").pop();
+      const used = f.claimedBy && f.claimedBy.stringValue;
+      return '<div class="admrow"><div><b>' + esc(f.title ? f.title.stringValue : "") + '</b><span class="' + (used ? "used" : "free") + '">' + (used ? "Used" : "Unused") + '</span></div>' +
+        '<div class="admbtns"><button onclick="showShareQr(\'' + token + '\',\'' + esc(f.title ? f.title.stringValue : "").replace(/'/g, "") + '\')">QR</button><button onclick="copyShare(\'' + token + '\')">Copy</button><button class="del" onclick="deleteShare(\'' + token + '\')">Delete</button></div></div>';
+    }).join("");
+  }catch(e){ box.textContent = "Network error."; }
+}
+async function deleteShare(token){
+  if(!window.confirm("Delete this private link? It will stop working.")) return;
+  const r = await fsFetch("/shares/" + token, {method: "DELETE"});
+  toast(r.ok ? "Deleted" : "Could not delete"); loadShares();
+}
+
+
+function newCode(){
+  const a = new Uint8Array(10); crypto.getRandomValues(a);
+  const al = "ABCDEFGHJKMNPQRSTUVWXYZ23456789"; let t = "";
+  for(let i = 0; i < 10; i++) t += al[a[i] % al.length];
+  return "VN-" + t.slice(0, 5) + "-" + t.slice(5);
+}
+async function createCoupon(){
+  const err = $("cpErr"); err.textContent = "";
+  const note = $("cpNote").value.trim(), code = newCode();
+  try{
+    const r = await fsFetch("/coupons?documentId=" + code, {method: "POST", body: JSON.stringify({fields: {
+      type: {stringValue: "free_one"}, active: {booleanValue: true}, note: {stringValue: note}, createdAt: {integerValue: String(Date.now())}}})});
+    if(!r.ok){ err.textContent = r.status === 403 ? "Permission denied. Add the coupons rules in Firestore and check the Admin UID." : "Could not create the code (error " + r.status + ")."; return; }
+    $("cpNote").value = ""; showCoupon(code); loadCoupons();
+  }catch(e){ err.textContent = "Network error. Please try again."; }
+}
+function showCoupon(code){
+  $("cpResult").innerHTML = '<div class="pcard admres"><b>Your free code</b><div class="cpcode">' + code + '</div>' +
+    '<div class="prow"><button class="cn" onclick="copyCoupon(\'' + code + '\')">Copy</button><button class="sv" onclick="shareCoupon(\'' + code + '\')">Share…</button></div></div>';
+}
+async function copyCoupon(code){
+  try{ await navigator.clipboard.writeText(code); toast("Code copied"); }catch(e){ window.prompt("Copy this code:", code); }
+}
+function shareCoupon(code){
+  const text = "🎁 Use code " + code + " in your cart at " + SITE_URL + " to get one VN template free!";
+  if(navigator.share) navigator.share({title: "Free template code", text: text}).catch(() => {});
+  else copyCoupon(code);
+}
+async function loadCoupons(){
+  const box = $("cpList"); if(!box) return;
+  try{
+    const r = await fsFetch("/coupons?pageSize=100&orderBy=" + encodeURIComponent("createdAt desc"));
+    if(!r.ok){ box.textContent = r.status === 403 ? "Permission denied. Add the coupons rules in Firestore and check the Admin UID." : "Could not load codes (error " + r.status + ")."; return; }
+    const docs = (r.data && r.data.documents) || [];
+    if(!docs.length){ box.textContent = "No codes yet."; return; }
+    box.innerHTML = docs.map(d => {
+      const f = d.fields || {}, code = d.name.split("/").pop(), on = !(f.active && f.active.booleanValue === false);
+      return '<div class="admrow"><div><b>' + esc(code) + '</b><span class="' + (on ? "free" : "used") + '">' + (on ? "Active" : "Disabled") + '</span>' +
+        (f.note && f.note.stringValue ? '<div class="cpnote">' + esc(f.note.stringValue) + '</div>' : "") + '</div>' +
+        '<div class="admbtns"><button onclick="copyCoupon(\'' + code + '\')">Copy</button><button onclick="setCouponActive(\'' + code + '\',' + (on ? "false" : "true") + ')">' + (on ? "Disable" : "Enable") + '</button><button class="del" onclick="deleteCoupon(\'' + code + '\')">Delete</button></div></div>';
+    }).join("");
+  }catch(e){ box.textContent = "Network error."; }
+}
+async function setCouponActive(code, on){
+  const r = await fsFetch("/coupons/" + code + "?updateMask.fieldPaths=active&currentDocument.exists=true", {method: "PATCH", body: JSON.stringify({fields: {active: {booleanValue: on}}})});
+  toast(r.ok ? (on ? "Code enabled" : "Code disabled") : "Could not update"); loadCoupons();
+}
+async function deleteCoupon(code){
+  if(!window.confirm("Delete this code? It will stop working.")) return;
+  const r = await fsFetch("/coupons/" + code, {method: "DELETE"});
+  toast(r.ok ? "Deleted" : "Could not delete"); loadCoupons();
+}
+
+
+/* ---------- Store templates from Firestore (managed from the Admin page) ---------- */
+function fsVal(v){
+  if(!v) return undefined;
+  if(v.stringValue !== undefined) return v.stringValue;
+  if(v.integerValue !== undefined) return Number(v.integerValue);
+  if(v.booleanValue !== undefined) return v.booleanValue;
+  return undefined;
+}
+function tplFromDoc(doc){
+  const f = doc.fields || {};
+  return {id: fsVal(f.id), name: fsVal(f.name) || "", cat: fsVal(f.cat) || "Birthday",
+    video: fsVal(f.video) || "", poster: fsVal(f.poster) || "", qr: fsVal(f.qr) || "",
+    active: f.active ? fsVal(f.active) !== false : true};
+}
+function tplToFields(t){
+  return {fields: {id: {integerValue: String(t.id)}, name: {stringValue: t.name}, cat: {stringValue: t.cat},
+    video: {stringValue: t.video || ""}, poster: {stringValue: t.poster || ""}, qr: {stringValue: t.qr || ""},
+    active: {booleanValue: t.active !== false}, createdAt: {integerValue: String(Date.now())}}};
+}
+async function loadTemplates(){
+  let ok = false;
+  try{
+    const r = await fetch(FS_BASE + "/templates?pageSize=300&key=" + FB_KEY);
+    if(r.ok){
+      const d = await r.json();
+      const all = (d.documents || []).map(tplFromDoc).filter(t => t.id);
+      window.ALL_TPL = all;
+      TEMPLATES.splice(0, TEMPLATES.length, ...all.filter(t => t.active !== false));
+      ok = true;
+    }
+  }catch(e){}
+  if(!ok && !window.ALL_TPL){       // Database પહોંચે નહીં તો શરૂઆતની યાદી
+    window.ALL_TPL = STARTER.map(t => Object.assign({active: true}, t));
+    TEMPLATES.splice(0, TEMPLATES.length, ...STARTER);
+  }
+  renderCats();
+  if(currentCat === "Saved") showSaved(); else showCategory(currentCat);
+  updateBadges();
+  if(!$("cartPage").classList.contains("hidden")) renderCart();
+  if(!$("adminPage").classList.contains("hidden")) renderTplAdmin();
+  const m = location.hash.match(/^#t=(\d+)/);
+  if(m && byId(+m[1])) openTemplate(+m[1]);
+}
+function uploadAsset(file, publicId, kind){
+  return new Promise((resolve, reject) => {
+    const fd = new FormData(); fd.append("file", file); fd.append("upload_preset", CLOUDINARY.preset); fd.append("public_id", publicId);
+    const x = new XMLHttpRequest();
+    x.open("POST", "https://api.cloudinary.com/v1_1/" + CLOUDINARY.cloud + "/" + kind + "/upload");
+    x.onload = () => {
+      let d = {}; try{ d = JSON.parse(x.responseText); }catch(e){}
+      if(x.status < 300 && d.secure_url) resolve(d);
+      else reject(new Error((d.error && d.error.message) ? "Upload failed: " + d.error.message : "Upload failed (error " + x.status + ")."));
+    };
+    x.onerror = () => reject(new Error("Network error while uploading."));
+    x.send(fd);
+  });
+}
+function renderTplAdmin(){
+  const sel = $("tplCat"); if(sel) sel.innerHTML = CATS.map(c => "<option>" + c + "</option>").join("");
+  const box = $("tplAdmList"); if(!box) return;
+  const list = (window.ALL_TPL || []).slice();
+  if(!list.length){ box.textContent = "No templates yet. Add one above, or import the starter templates."; return; }
+  box.innerHTML = list.map(t => '<div class="admrow"><div><b>' + esc(t.name) + '</b><span class="' + (t.active !== false ? "free" : "used") + '">' + (t.active !== false ? "On store" : "Hidden") + '</span></div>' +
+    '<div class="cpnote">' + esc(t.cat) + (t.video ? " · video ✓" : " · no video") + (t.qr ? " · QR ✓" : " · no QR") + '</div>' +
+    '<div class="admbtns"><button onclick="setTplActive(' + t.id + ',' + (t.active !== false ? "false" : "true") + ')">' + (t.active !== false ? "Hide" : "Show") + '</button><button class="del" onclick="deleteTpl(' + t.id + ')">Delete</button></div></div>').join("");
+}
+async function createTemplate(){
+  const err = $("tplErr"); err.classList.remove("ok"); err.textContent = "";
+  const name = $("tplName").value.trim(), cat = $("tplCat").value;
+  const vUrl = $("tplVideoUrl").value.trim(), vFile = $("tplVideoFile").files[0];
+  const qUrl = $("tplQrUrl").value.trim(), qFile = $("tplQrFile").files[0];
+  if(!name){ err.textContent = "Enter the template name."; return; }
+  if(!vFile && !validVideoUrl(vUrl)){ err.textContent = "Add a video file, or a valid https:// video link."; return; }
+  const id = Date.now() % 1000000000, btn = $("tplGo"); btn.disabled = true;
+  try{
+    let video = vUrl, poster = "", qr = qUrl;
+    if(vFile){
+      if(!CLOUDINARY.cloud || !CLOUDINARY.preset) throw new Error("Video upload is not set up yet. Paste a video link instead.");
+      const d = await uploadAsset(vFile, "tpl-" + id, "video");
+      video = d.secure_url;
+      poster = "https://res.cloudinary.com/" + CLOUDINARY.cloud + "/video/upload/so_0/" + d.public_id + ".jpg";
+    }
+    if(qFile){
+      if(!CLOUDINARY.cloud || !CLOUDINARY.preset) throw new Error("Upload is not set up yet. Paste a QR image link instead.");
+      const d = await uploadAsset(qFile, "tplqr-" + id, "image"); qr = d.secure_url;
+    }
+    const r = await fsFetch("/templates?documentId=" + id, {method: "POST", body: JSON.stringify(tplToFields({id: id, name: name, cat: cat, video: video, poster: poster, qr: qr, active: true}))});
+    if(!r.ok) throw new Error(r.status === 403 ? "Permission denied. Check the Firestore rules." : "Could not save (error " + r.status + ").");
+    ["tplName","tplVideoUrl","tplQrUrl"].forEach(k => $(k).value = "");
+    $("tplVideoFile").value = ""; $("tplQrFile").value = "";
+    err.classList.add("ok"); err.textContent = "Template added ✓";
+    await loadTemplates();
+  }catch(e){ err.textContent = e.message || "Something went wrong."; }
+  btn.disabled = false;
+}
+async function importStarter(){
+  const err = $("tplErr"); err.classList.remove("ok"); err.textContent = "Importing…";
+  let made = 0, skipped = 0;
+  for(const t of STARTER){
+    const r = await fsFetch("/templates?documentId=" + t.id, {method: "POST", body: JSON.stringify(tplToFields(Object.assign({active: true}, t)))});
+    if(r.ok) made++; else skipped++;
+  }
+  err.classList.add("ok"); err.textContent = "Imported " + made + " template(s)" + (skipped ? ", " + skipped + " already existed" : "") + ".";
+  await loadTemplates();
+}
+async function setTplActive(id, on){
+  const r = await fsFetch("/templates/" + id + "?updateMask.fieldPaths=active&currentDocument.exists=true", {method: "PATCH", body: JSON.stringify({fields: {active: {booleanValue: on}}})});
+  toast(r.ok ? (on ? "Shown in store" : "Hidden from store") : "Could not update");
+  await loadTemplates();
+}
+async function deleteTpl(id){
+  if(!window.confirm("Delete this template from the store?")) return;
+  const r = await fsFetch("/templates/" + id, {method: "DELETE"});
+  toast(r.ok ? "Deleted" : "Could not delete");
+  await loadTemplates();
+}
+
+
+/* ---------- Open a template's QR from the order history (works on phones) ---------- */
+function openQrItem(orderIdx, itemIdx){
+  const o = vnOrders()[orderIdx]; if(!o || !o.items[itemIdx]) return;
+  const it = o.items[itemIdx], t = byId(it.id);
+  if(t && t.qr){ window.open(t.qr, "_blank"); return; }                  // અસલી QR ફાઇલ
+  const svg = decodeURIComponent(String(qrFor(it)).split(",")[1] || "");   // નમૂના QR
+  const url = URL.createObjectURL(new Blob([svg], {type: "image/svg+xml"}));
+  window.open(url, "_blank");
+}
+
+
+/* ---------- Watch a purchased template's video from the order ---------- */
+function openTemplateVideo(id){
+  const t = byId(id); if(!t || !t.video){ toast("Video not available"); return; }
+  closeViewer();
+  const vUrl = /^https?:\/\//.test(t.video) ? t.video : location.origin + "/" + t.video;
+  $("vvBody").innerHTML = '<div class="vtop"><button class="vx" onclick="closeViewer()" aria-label="Close">✕</button><span>' + esc(t.name) + '</span></div>' +
+    '<div class="vstage"><video controls playsinline autoplay ' + (t.poster ? 'poster="' + esc(t.poster) + '"' : "") + ' controlsList="nodownload" oncontextmenu="return false" src="' + esc(vUrl) + '"></video></div>' +
+    '<div class="vbar"><span class="vlock">▶ Your purchased template</span></div>';
+  $("vidView").classList.remove("hidden");
+  const v = $("vvBody").querySelector("video"); if(v && v.play){ const p = v.play(); if(p && p.catch) p.catch(() => {}); }
+}
+
+refreshUI();
+
+
+loadTemplates();
+
+</script>
+</body>
+</html>
