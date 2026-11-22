@@ -489,7 +489,7 @@ h2{text-align:center;font-size:26px;margin:26px 0 16px}
 
 <div id="toast" class="toast hidden"></div>
 <script>window.addEventListener("error",function(e){if(e.message==="Script error.")return;alert("JS Error: "+e.message+" ("+(e.filename||"").split("/").pop()+":"+e.lineno+")")});</script>
-<div class="ver">VN CODE 01 · v35</div>
+<div class="ver">VN CODE 01 · v36</div>
 <script>
 // તમારા Admin Account નો User UID અહીં મૂકો (Firebase > Authentication > Users). ખાલી હોય ત્યાં સુધી Admin પેજ બંધ રહે.
 const ADMIN_UID = "9GNIaRYUiwVN5nBLRvr34i496XJ3";
@@ -1686,7 +1686,7 @@ function showQrResult(title, link, mode){
     '<div id="admQr" class="admqr"></div>' +
     '<div class="prow"><button class="cn" onclick="copyLink(curQr.link)">Copy link</button><button class="sv" onclick="downloadCurQr()">Download QR</button></div>' +
     '<button class="hbtn wa" onclick="waCurQr()">Share on WhatsApp</button>' +
-    '<p class="admsub" style="margin:12px 0 0;font-size:15px">Scan the QR with Google Lens to open the video.</p></div>';
+    '<p class="admsub" style="margin:12px 0 0;font-size:15px">Scan google lens</p></div>';
   $("admQr").appendChild(qrStampCanvas(link, 360));
   $("admResult").scrollIntoView && $("admResult").scrollIntoView({behavior: "smooth"});
 }
@@ -1695,16 +1695,29 @@ async function copyLink(link){
   try{ await navigator.clipboard.writeText(link); toast("Link copied"); }catch(e){ window.prompt("Copy this link:", link); }
 }
 function copyShare(token){ copyLink(shareLink(token)); }
+function qrWithCaption(link, size){
+  const q = qrStampCanvas(link, size);
+  const pad = 40, capH = 110, w = q.width || size, h = q.height || size;
+  const c = document.createElement("canvas");
+  c.width = w + pad * 2; c.height = h + pad * 2 + capH;
+  const x = c.getContext("2d");
+  x.fillStyle = "#ffffff"; x.fillRect(0, 0, c.width, c.height);
+  x.drawImage(q, pad, pad, w, h);
+  x.fillStyle = "#111111"; x.font = "bold " + Math.round(size * 0.075) + "px sans-serif";
+  x.textAlign = "center"; x.textBaseline = "middle";
+  x.fillText("Scan google lens", c.width / 2, h + pad * 2 + capH / 2);
+  return c;
+}
 function downloadCurQr(){
   if(!curQr) return;
-  const c = qrStampCanvas(curQr.link, 900);
+  const c = qrWithCaption(curQr.link, 900);
   c.toBlob(b => { const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = "video-qr-" + String(curQr.link).slice(-6) + ".png"; document.body.appendChild(a); a.click(); a.remove(); });
 }
 async function waCurQr(){
   if(!curQr) return;
   const text = "▶ Scan this QR with Google Lens to watch the video:\n" + curQr.link;
   try{
-    const c = qrStampCanvas(curQr.link, 800);
+    const c = qrWithCaption(curQr.link, 800);
     const blob = await new Promise(res => c.toBlob(res, "image/png"));
     const file = new File([blob], "video-qr.png", {type: "image/png"});
     if(navigator.canShare && navigator.canShare({files: [file]})){ await navigator.share({files: [file], text: text}); return; }
