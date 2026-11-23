@@ -367,8 +367,7 @@ h2{text-align:center;font-size:26px;margin:26px 0 16px}
   <ul>
     <li onclick="showCategory('All');toggleMenu(false)">☰ All Templates</li>
     <li onclick="toggleMenu(false);openHow()">ⓘ How It Use</li>
-    <li onclick="alert('VN CODE 01 - Premium VN Video Templates\n\nWe are a digital platform created to simplify video creation for reels, weddings, festivals, travel content, and business promotions. We help creators save valuable time and produce high-quality videos effortlessly.')">👤 About us</li>
-    <li onclick="alert('Email: vncode26@gmail.com\n\nOur team is here to help you with any questions or support.')">✉ Contact us</li>
+    <li onclick="toggleMenu(false);openContact()">✉ Contact us</li>
     <li onclick="showSaved();toggleMenu(false)">♡ Saved Templates <span id="savedCount" class="badge2">0</span></li>
     <li onclick="toggleMenu(false);openAccount('orders')">▤ Order History</li>
   </ul>
@@ -511,7 +510,7 @@ h2{text-align:center;font-size:26px;margin:26px 0 16px}
 
 <div id="toast" class="toast hidden"></div>
 <script>window.addEventListener("error",function(e){if(e.message==="Script error.")return;alert("JS Error: "+e.message+" ("+(e.filename||"").split("/").pop()+":"+e.lineno+")")});</script>
-<div class="ver">VN CODE 01 · v41</div>
+<div class="ver">VN CODE 01 · v42</div>
 <script>
 // તમારા Admin Account નો User UID અહીં મૂકો (Firebase > Authentication > Users). ખાલી હોય ત્યાં સુધી Admin પેજ બંધ રહે.
 const ADMIN_UID = "9GNIaRYUiwVN5nBLRvr34i496XJ3";
