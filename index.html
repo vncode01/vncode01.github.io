@@ -319,13 +319,53 @@ h2{text-align:center;font-size:26px;margin:26px 0 16px}
 .ccard h4{font-size:21px;font-weight:700;margin:0 0 8px;color:#0f172a}
 .ccard .cval{font-size:19px;color:#475569;line-height:1.5}
 .ccard .cval a{color:#0f8a72;text-decoration:none;font-weight:600}
+
+/* ---------- Install app bar ---------- */
+.ibar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;background:#0f172a;color:#fff;border-radius:16px;padding:12px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.ibar span{flex:1;font-size:15px;line-height:1.4}
+.ibar button{background:#1b8a76;color:#fff;border:0;border-radius:10px;padding:8px 14px;font-weight:700;font-size:14px}
+.ibar .ibx{background:transparent;color:#cbd5e1;padding:6px 8px}
+.ibar.hidden{display:none}
+
+/* ---------- Store card look (poster + bold info) ---------- */
+.thumb video{object-fit:cover;background:transparent}
+.card .name{font-size:17px;font-weight:600;color:#0f172a;line-height:1.35}
+.card .price{font-size:19px;font-weight:800;color:#0f172a;margin:6px 0 10px}
+.card .price s{font-size:14px;color:#94a3b8;font-weight:500}
+.card .add{font-size:16px;padding:12px 10px;border-radius:12px}
+
+/* ---------- About Us page extras ---------- */
+.atag{display:inline-block;background:#dcece8;color:#0f8a72;border-radius:999px;padding:8px 22px;font-size:15px;letter-spacing:2px;margin:6px 0 14px}
+.cwrap h1 span{color:#0f8a72}
+.asec{font-size:28px;font-weight:800;margin:30px 0 16px;color:#0f172a}
+
+/* ---------- Store look (VN code pro style) ---------- */
+header{padding:12px 16px;gap:8px}
+header .logo{font-size:30px}
+header .actions{gap:8px}
+.pill-fest{background:linear-gradient(90deg,#a21caf,#4f46e5);color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;font-size:14px;border:0}
+.pill{font-weight:700;border:0}
+.sec-title{text-align:center;font-size:30px;font-weight:800;margin:30px 0 6px;color:#0f172a}
+.sec-title:after{content:"";display:block;width:70px;height:5px;background:#0f8a72;border-radius:3px;margin:12px auto 0}
+.grid{gap:14px;padding:0 14px}
+.card{border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.card .add{background:#0f8a72;color:#fff;font-weight:700;font-size:17px;padding:14px 10px;border-radius:14px;width:100%}
+.card .name{font-size:18px;font-weight:700}
+.card .price{font-size:21px;font-weight:800}
 </style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1b8a76">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="VN CODE 01">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 </head>
 <body>
 
 <header>
   <div class="logo">VN<small>CODE 01</small></div>
   <div class="actions">
+    <button class="pill-fest" onclick="document.querySelector('.chips').scrollIntoView({behavior:'smooth'})">Festival</button>
     <button class="pill" onclick="openCart()">Bundle</button>
     <button class="icon" onclick="toggleSearch()" aria-label="Search">🔍</button>
     <button class="icon cart-btn" onclick="openCart()" aria-label="Cart">🛒<span id="cartCount" class="badge">0</span></button>
@@ -350,12 +390,12 @@ h2{text-align:center;font-size:26px;margin:26px 0 16px}
 <div class="promo">GET 1 FREE on 3 templates! Code: <b id="code" onclick="copyCode()">B2G1 ⧉</b></div>
 
 <section class="cats">
-  <h2>Find by Category</h2>
+  <h2 class="sec-title">Find by Category</h2>
   <div id="catList" class="chips"></div>
 </section>
 
 <section class="trend">
-  <h2 id="gridTitle">Trending Templates</h2>
+  <h2 id="gridTitle" class="sec-title">Trending Templates</h2>
   <div id="grid" class="grid"></div>
 </section>
 
@@ -367,6 +407,7 @@ h2{text-align:center;font-size:26px;margin:26px 0 16px}
   <ul>
     <li onclick="showCategory('All');toggleMenu(false)">☰ All Templates</li>
     <li onclick="toggleMenu(false);openHow()">ⓘ How It Use</li>
+    <li onclick="toggleMenu(false);openAbout()">👤 About us</li>
     <li onclick="toggleMenu(false);openContact()">✉ Contact us</li>
     <li onclick="showSaved();toggleMenu(false)">♡ Saved Templates <span id="savedCount" class="badge2">0</span></li>
     <li onclick="toggleMenu(false);openAccount('orders')">▤ Order History</li>
@@ -442,6 +483,15 @@ h2{text-align:center;font-size:26px;margin:26px 0 16px}
 </div>
 
 <!-- Big-screen video viewer -->
+<div id="installBar" class="ibar hidden"><span>📲 VN CODE 01 એપ તરીકે ઇન્સ્ટોલ કરો</span><button onclick="doInstall()">Install</button><button class="ibx" onclick="hideInstallBar()">✕</button></div>
+<div id="aboutPage" class="cpage hidden">
+  <div class="authtop">
+    <button class="back" onclick="closeAbout()">← Back</button>
+    <div class="logo">VN<small>CODE 01</small></div>
+    <span style="width:60px"></span>
+  </div>
+  <div id="aboutBody" class="cwrap"></div>
+</div>
 <div id="contactPage" class="cpage hidden">
   <div class="authtop">
     <button class="back" onclick="closeContact()">← Back</button>
@@ -510,7 +560,7 @@ h2{text-align:center;font-size:26px;margin:26px 0 16px}
 
 <div id="toast" class="toast hidden"></div>
 <script>window.addEventListener("error",function(e){if(e.message==="Script error.")return;alert("JS Error: "+e.message+" ("+(e.filename||"").split("/").pop()+":"+e.lineno+")")});</script>
-<div class="ver">VN CODE 01 · v42</div>
+<div class="ver">VN CODE 01 · v51</div>
 <script>
 // તમારા Admin Account નો User UID અહીં મૂકો (Firebase > Authentication > Users). ખાલી હોય ત્યાં સુધી Admin પેજ બંધ રહે.
 const ADMIN_UID = "9GNIaRYUiwVN5nBLRvr34i496XJ3";
@@ -540,7 +590,8 @@ const TEMPLATES = [
   {id:10,name:"Friends Forever",cat:"Friends",video:""},
   {id:11,name:"Wedding Entry Reel",cat:"Wedding",video:""},
   {id:12,name:"Besties Photo Beat",cat:"Bestie",video:""},
-  {id:13,name:"Happy Birthday",cat:"Birthday",video:"videos/happy-birthday.mp4",poster:"videos/happy-birthday.jpg",qr:"images/qr-happy-birthday.png",vnId:"952794",tags:["Happy Birthday Reel","Birthday VN Template","VN Video Template"]}
+  {id:13,name:"Happy Birthday",cat:"Birthday",video:"videos/happy-birthday.mp4",poster:"videos/happy-birthday.jpg",qr:"images/qr-happy-birthday.png",vnId:"952794",tags:["Happy Birthday Reel","Birthday VN Template","VN Video Template"]},
+  {id:14,name:"Classic Birthday Memories Reel",cat:"Birthday",video:"videos/classic-birthday.mp4",poster:"videos/classic-birthday.jpg",desc:"Celebrate a special birthday with a timeless classic edit that turns your favorite photos and videos into a beautiful memory reel. This template keeps the focus on genuine moments, making it perfect for a simple yet emotional birthday tribute. Add childhood memories, favorite selfies, celebrations, family moments, friendship memories, or recent photos to create a personalized birthday story. The classic editing style gives the reel a clean, elegant, and nostalgic feel. Perfect for birthday wishes, photo dumps, bestie birthdays, couple birthdays, or anyone special whose memories deserve to be celebrated.",tags:["Happy Birthday","Classic Reel","Birthday Memories"]},
 ];
 const STARTER = TEMPLATES.map(t => Object.assign({}, t));   // શરૂઆતના Templates (Import માટે)
 
@@ -1985,6 +2036,44 @@ function openContact(){
   $("contactPage").classList.remove("hidden"); $("contactPage").scrollTop = 0;
 }
 function closeContact(){ $("contactPage").classList.add("hidden"); }
+
+/* ---------- Install as app (PWA) ---------- */
+let deferredPrompt = null;
+window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); deferredPrompt = e; showInstallBar(); });
+window.addEventListener("appinstalled", () => { deferredPrompt = null; hideInstallBar(); });
+function showInstallBar(){ const b = document.getElementById("installBar"); if(b) b.classList.remove("hidden"); }
+function hideInstallBar(){ const b = document.getElementById("installBar"); if(b) b.classList.add("hidden"); }
+async function doInstall(){
+  if(!deferredPrompt){ alert("Chrome ના મેનૂ (⋮) માંથી \"Install app\" અથવા \"Add to Home screen\" પસંદ કરો"); return; }
+  deferredPrompt.prompt();
+  try { await deferredPrompt.userChoice; } catch(e) {}
+  deferredPrompt = null; hideInstallBar();
+}
+if("serviceWorker" in navigator && location.protocol === "https:"){ navigator.serviceWorker.register("sw.js").catch(() => {}); }
+
+/* ---------- About Us page ---------- */
+function renderAbout(){
+  $("aboutBody").innerHTML = `
+    <div class="atag">ABOUT US</div>
+    <h1>Welcome to <span>VN CODE 01</span></h1>
+    <p class="csub">We are a digital platform created to simplify video creation for reels, weddings, festivals, travel content, and business promotions.</p>
+    <h2 class="asec">What We Provide</h2>
+    <div class="ccard"><div class="cic">▶</div><h4>Professionally Designed</h4><div class="cval">Meticulously crafted by experts focusing on current trends and high visual appeal.</div></div>
+    <div class="ccard"><div class="cic">▦</div><h4>Instant QR-Based Access</h4><div class="cval">Get immediate, secure access to your purchased template via a unique QR code. No waiting, just instant creation.</div></div>
+    <div class="ccard"><div class="cic">🛡</div><h4>Secure Payments</h4><div class="cval">Transactions processed securely through trusted partners ensuring your data is protected.</div></div>
+    <div class="ccard"><div class="cic">👤</div><h4>User-Friendly Experience</h4><div class="cval">Designed for simplicity, making it easy for beginners and pros to find and use templates.</div></div>
+    <div class="ccard"><div class="cic">🎧</div><h4>Dedicated Support</h4><div class="cval">Responsive support for technical issues to ensure a smooth creative experience.</div></div>
+    <h2 class="asec">Our Mission</h2>
+    <div class="cbox"><p style="font-style:italic;font-size:19px;color:#0f172a">"To help creators save valuable time and produce high-quality videos effortlessly, turning complex editing into a simple, enjoyable process."</p></div>
+    <p class="csub">We are committed to being your reliable partner in digital content creation.</p>
+    <div class="cbox"><h3>Get in Touch</h3><p>Have questions or need support? Our team is always here to help you bring your vision to life.</p><p style="margin-top:12px"><a href="mailto:vncode26@gmail.com" style="color:#0f8a72;font-weight:700;text-decoration:none">vncode26@gmail.com</a></p></div>`;
+}
+function openAbout(){
+  document.querySelectorAll("video").forEach(v => v.pause());
+  if(!$("aboutBody").innerHTML) renderAbout();
+  $("aboutPage").classList.remove("hidden"); $("aboutPage").scrollTop = 0;
+}
+function closeAbout(){ $("aboutPage").classList.add("hidden"); }
 
 </script>
 </body>
