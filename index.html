@@ -352,6 +352,11 @@ header .actions{gap:8px}
 .card .add{background:#0f8a72;color:#fff;font-weight:700;font-size:17px;padding:14px 10px;border-radius:14px;width:100%}
 .card .name{font-size:18px;font-weight:700}
 .card .price{font-size:21px;font-weight:800}
+
+/* ---------- Search fix (works under the taller header) ---------- */
+.search{top:0;padding:84px 16px 16px;z-index:50;overflow-y:auto}
+.search .sclose{position:absolute;top:18px;right:14px;background:#fff;border:0;border-radius:50%;width:40px;height:40px;font-size:18px;font-weight:700;color:#0f172a;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.search input{margin-top:6px}
 </style>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1b8a76">
@@ -383,6 +388,7 @@ header .actions{gap:8px}
 </header>
 
 <div id="searchBox" class="search hidden">
+  <button class="sclose" onclick="toggleSearch()" aria-label="Close">✕</button>
   <input id="searchInput" placeholder="Search for wedding, birthday..." oninput="doSearch()">
   <div id="searchResults" class="results">Start typing to search</div>
 </div>
@@ -560,7 +566,7 @@ header .actions{gap:8px}
 
 <div id="toast" class="toast hidden"></div>
 <script>window.addEventListener("error",function(e){if(e.message==="Script error.")return;alert("JS Error: "+e.message+" ("+(e.filename||"").split("/").pop()+":"+e.lineno+")")});</script>
-<div class="ver">VN CODE 01 · v51</div>
+<div class="ver">VN CODE 01 · v52</div>
 <script>
 // તમારા Admin Account નો User UID અહીં મૂકો (Firebase > Authentication > Users). ખાલી હોય ત્યાં સુધી Admin પેજ બંધ રહે.
 const ADMIN_UID = "9GNIaRYUiwVN5nBLRvr34i496XJ3";
